@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+
 public class InputController : MonoBehaviour
 {
     private enum Inputs { Horizontal , Vertical }; //List of inputs used for the game
@@ -13,18 +13,23 @@ public class InputController : MonoBehaviour
 
     private Rigidbody2D rb2D;
 
+    [SerializeField] GameObject player;
+
     [SerializeField] float inputDelaySeconds = 0.5f;
     [SerializeField] float gameObjectSpeed = 0.5f;
+
+    private const string INTERATABLEOBJECTTAG = "InteractableObject";
 
     private void Start()
     {
         inputDelay = new DelayBool(inputDelaySeconds);
-        rb2D = GetComponent<Rigidbody2D>();
+        rb2D = player.GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         CheckMovementInput();
+        ClickInteraction();
     }
 
     private void CheckMovementInput()
@@ -58,6 +63,26 @@ public class InputController : MonoBehaviour
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Raycast mouse position on left click and interact with object if present
+    /// </summary>
+    private void ClickInteraction()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 mouseRay = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D mouseHit = Physics2D.Raycast(mouseRay, Vector2.zero);
+
+            if (mouseHit)
+            {
+                if (mouseHit.transform.tag == INTERATABLEOBJECTTAG)
+                {
+                    mouseHit.transform.GetComponent<InteractableObject>().Interact();
+                }
+            }
+        }
     }
 
     //DelayBool Timer

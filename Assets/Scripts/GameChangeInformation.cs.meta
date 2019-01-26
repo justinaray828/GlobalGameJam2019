@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8c57ee831e49aae4c9eefedeeec69a18
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - MainGame: {fileID: 3365489752605421012, guid: d96a0446c21c0fa40bf6cbdcb84961fe,
+      type: 3}
+  - DancingGame: {instanceID: 0}
+  - FridgeGame: {instanceID: 0}
+  - FlowerGame: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
