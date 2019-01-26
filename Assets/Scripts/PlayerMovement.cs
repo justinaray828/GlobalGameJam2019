@@ -11,7 +11,9 @@ public class PlayerMovement : MonoBehaviour
     private float _DesiredZDepth = -5f;
     private float _CurrentZDepth = -5f;
     private bool _StartedChangingDepth = false;
-    
+
+    private const string INTERATABLEOBJECTTAG = "InteractableObject";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,6 +79,28 @@ public class PlayerMovement : MonoBehaviour
             {
                 _CurrentZDepth = _DesiredZDepth;
                 _StartedChangingDepth = false;
+            }
+        }
+
+        ClickInteraction();
+    }
+
+    /// <summary>
+    /// Raycast mouse position on left click and interact with object if present
+    /// </summary>
+    private void ClickInteraction()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 mouseRay = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D mouseHit = Physics2D.Raycast(mouseRay, Vector2.zero);
+
+            if (mouseHit)
+            {
+                if (mouseHit.transform.tag == INTERATABLEOBJECTTAG)
+                {
+                    mouseHit.transform.GetComponent<InteractableObject>().Interact();
+                }
             }
         }
     }
