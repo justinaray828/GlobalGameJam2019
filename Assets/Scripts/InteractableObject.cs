@@ -5,13 +5,17 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour
 {
     [SerializeField] private InteractableObjectData interactableObjectData;
-    [SerializeField] private Canvas SpeechCanvas;
+
     private GameChangeInformation gameChangeInformation;
     private const string GAMECHANGEINFORMATIONTAG = "GameChangeInformation";
+
+    private GameObject imageClueCanvas;
+    private const string IMAGECLUETAG = "ImageClue";
 
     private void Start()
     {
         gameChangeInformation = GameObject.FindGameObjectWithTag(GAMECHANGEINFORMATIONTAG).GetComponent<GameChangeInformation>();
+        imageClueCanvas = GameObject.FindGameObjectWithTag(IMAGECLUETAG);
     }
 
     /// <summary>
@@ -40,7 +44,7 @@ public class InteractableObject : MonoBehaviour
 
     private void ImageInteraction()
     {
-
+        Instantiate(interactableObjectData.clue, imageClueCanvas.transform);
     }
 
     private void MiniGameInteraction()

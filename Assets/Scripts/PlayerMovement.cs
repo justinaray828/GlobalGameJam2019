@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void ClickInteraction()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0))
         {
             Vector2 mouseRay = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D mouseHit = Physics2D.Raycast(mouseRay, Vector2.zero);
