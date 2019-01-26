@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [Range(0f, 1f)]
+    [Range(.05f, 2f)]
     public float fadespeed = 1f;
     public Sound[] sounds;
     public static AudioManager instance;
@@ -38,9 +38,10 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.playOnAwake = s.playonawake;
 
+            //sources were not truly playing on awake. Perhaps they were being created after awake had been called?
+            //regardless, this manually takes 
             if (s.playonawake)
                 s.source.Play();
-
         }
     }
 
@@ -51,6 +52,7 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
+        //TODO consider changing this to having a stack of things fade.
         if (fadeInState)
         {
             fadeInSound.source.volume += fadespeed * Time.deltaTime;
@@ -88,6 +90,10 @@ public class AudioManager : MonoBehaviour
         s.source.Stop();
     }
 
+    /// <summary>
+    /// Fade in the given sound
+    /// </summary>
+    /// <param name="name">Name.</param>
     public void FadeIn(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -101,6 +107,10 @@ public class AudioManager : MonoBehaviour
         fadeInState = true;
     }
 
+    /// <summary>
+    /// Fades the out.
+    /// </summary>
+    /// <param name="name">Name.</param>
     public void FadeOut(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -114,17 +124,44 @@ public class AudioManager : MonoBehaviour
         fadeOutState = true;
     }
 
-
     /// <summary>
     /// To be called when new memory has been remembered. This
     /// will activate the next layer of the musical score
     /// </summary>
-    public void IncreaseScore()
+    private void IncreaseScore()
     {
-        //TODO: need to figure out best way to write function to identify which music to fade in/out
-        FadeOut("score" + currentScoreNum);
-        FadeOut("score" + currentScoreNum);
         currentScoreNum++;
-        FadeIn("score" + currentScoreNum);
+    }
+
+    public void ToHomeMusicOnSuccess()
+    {
+        IncreaseScore();
+        Play("score" + currentScoreNum);
+    }
+
+    public void ToHomeMusicOnFailure()
+    {
+        Play("score" + currentScoreNum);
+    }
+
+    public void ToDanceMusic()
+    {
+        FadeOut("score" + currentScoreNum);
+        Play("puzzleDance");
+        FadeIn("puzzleDance");
+    }
+
+    public void ToFridgeMusic()
+    {
+        FadeOut("score" + currentScoreNum);
+        Play("puzzleFridge");
+        FadeIn("puzzleFridge");
+    }
+
+    public void ToFlowerMusic()
+    {
+        FadeOut("score" + currentScoreNum);
+        Play("puzzleFlower");
+        FadeIn("puzzleFlower");
     }
 }
