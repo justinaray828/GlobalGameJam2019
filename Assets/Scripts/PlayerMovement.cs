@@ -92,10 +92,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
-            Vector2 mouseRay = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D mouseHit = Physics2D.Raycast(mouseRay, Vector2.zero);
+            Ray mousRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit mouseHit;
+            Physics.Raycast(mousRay, out mouseHit);
 
-            if (mouseHit)
+            if (mouseHit.collider != null)
             {
                 if (mouseHit.transform.tag == INTERATABLEOBJECTTAG)
                 {
