@@ -50,3 +50,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: score1
+    clip: {fileID: 8300000, guid: 062f34491a9464c20a25d7471dd2eb5a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: score2
+    clip: {fileID: 8300000, guid: 7174284c89725444f90a869e67dffe18, type: 3}
+    volume: 0
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
