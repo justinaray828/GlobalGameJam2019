@@ -47,8 +47,12 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {   
-        currentScoreNum = 1;
-        //Play("score" + currentScoreNum);
+        currentScoreNum = 2;
+        for (int i = currentScoreNum; i > 0; i--)
+        {
+            Play("score" + i);
+        }
+
     }
 
     void Update()
@@ -77,6 +81,7 @@ public class AudioManager : MonoBehaviour
         }
         Debug.Log("playing: " + name);
         s.source.Play();
+        s.source.volume = 1f;
     }
 
     public void Stop(string name)
@@ -137,12 +142,18 @@ public class AudioManager : MonoBehaviour
     public void ToHomeMusicOnSuccess()
     {
         IncreaseScore();
-        Play("score" + currentScoreNum);
+        for (int i = currentScoreNum; i > 0; i--)
+        {
+            Play("score" + i);
+        }
     }
 
     public void ToHomeMusicOnFailure()
     {
-        Play("score" + currentScoreNum);
+        for (int i = currentScoreNum; i > 0; i--)
+        {
+            Play("score" + i);
+        }
     }
 
     public void ToDanceMusic()

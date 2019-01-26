@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Cube
   m_EditorClassIdentifier: 
   interactableObjectType: 2
-  miniGameType: 1
+  miniGameType: 3
   objectName: Cube
   outputText: This is a cube

@@ -330,6 +330,92 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &630952626
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 732738016, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+      propertyPath: m_Name
+      value: FlowerGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 732738016, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 732738018, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 203.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 732738018, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 732738018, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 732738018, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 732738018, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 732738018, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 732738018, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 732738018, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 732738018, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 732738018, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 732738018, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056946648, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+      propertyPath: m_TagString
+      value: InteractableObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264678513, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+      propertyPath: m_Name
+      value: InputControllerFlowers
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316055405403712286, guid: 14f8f4161af524dc7adecbf641816d0e,
+        type: 3}
+      propertyPath: m_TagString
+      value: InteractableObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727727494907743907, guid: 14f8f4161af524dc7adecbf641816d0e,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1264678515, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 14f8f4161af524dc7adecbf641816d0e, type: 3}
+--- !u!1 &732738016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 732738016, guid: 14f8f4161af524dc7adecbf641816d0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 630952626}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &807601598
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,8 +640,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainGame: {fileID: 1854407845}
   DancingGame: {fileID: 1288669250}
-  FridgeGame: {fileID: 331584164}
-  FlowerGame: {fileID: 823292682}
+  FridgeGame: {fileID: 732738016}
+  FlowerGame: {fileID: 732738016}
 --- !u!4 &1632084415
 Transform:
   m_ObjectHideFlags: 0
@@ -645,7 +731,7 @@ PrefabInstance:
     - target: {fileID: 8983283012052082492, guid: 66c4e96f653dd40619713a0c6ce1b70b,
         type: 3}
       propertyPath: fadespeed
-      value: 0.966
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 8983283012052082492, guid: 66c4e96f653dd40619713a0c6ce1b70b,
         type: 3}
@@ -767,6 +853,11 @@ PrefabInstance:
       propertyPath: sounds.Array.data[5].volume
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8983283012052082492, guid: 66c4e96f653dd40619713a0c6ce1b70b,
+        type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 062f34491a9464c20a25d7471dd2eb5a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66c4e96f653dd40619713a0c6ce1b70b, type: 3}
 --- !u!1 &1854407845 stripped
@@ -775,3 +866,23 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 43616533}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1911318731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1316055405403712286, guid: 14f8f4161af524dc7adecbf641816d0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 630952626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1911318736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911318731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1224e1e0f173a7a47b03a4dea7f4eb3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableObjectData: {fileID: 0}
+  SpeechCanvas: {fileID: 0}
