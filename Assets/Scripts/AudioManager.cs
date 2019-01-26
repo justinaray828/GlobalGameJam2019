@@ -48,6 +48,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {   
         currentScoreNum = 1;
+        Play("score" + currentScoreNum);
     }
 
     void Update()
@@ -146,22 +147,30 @@ public class AudioManager : MonoBehaviour
 
     public void ToDanceMusic()
     {
-        FadeOut("score" + currentScoreNum);
-        Play("puzzleDance");
-        FadeIn("puzzleDance");
+        if(currentScoreNum > 0) {
+            FadeOut("score" + currentScoreNum);
+            Play("puzzleDance");
+            FadeIn("puzzleDance");
+        }
     }
 
     public void ToFridgeMusic()
     {
-        FadeOut("score" + currentScoreNum);
-        Play("puzzleFridge");
-        FadeIn("puzzleFridge");
+        if (currentScoreNum > 0)
+        {
+            FadeOut("score" + currentScoreNum);
+            Play("puzzleFridge");
+            FadeIn("puzzleFridge");
+        }
     }
 
     public void ToFlowerMusic()
     {
-        FadeOut("score" + currentScoreNum);
-        Play("puzzleFlower");
-        FadeIn("puzzleFlower");
+        if (currentScoreNum > 0)
+        {
+            FadeOut("score" + currentScoreNum);
+            Play("puzzleFlower");
+            FadeIn("puzzleFlower");
+        }
     }
 }

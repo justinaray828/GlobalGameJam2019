@@ -12,7 +12,8 @@ public class DancingGame : MonoBehaviour
 
     private void OnEnable()
     {
-        FindObjectOfType<AudioManager>().ToDanceMusic();
+        if(FindObjectOfType<AudioManager>() != null)
+            FindObjectOfType<AudioManager>().ToDanceMusic();
     }
 
     private void OnDisable()
