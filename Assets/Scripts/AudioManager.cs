@@ -48,7 +48,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {   
         currentScoreNum = 1;
-        Play("score" + currentScoreNum);
+        //Play("score" + currentScoreNum);
     }
 
     void Update()

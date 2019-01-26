@@ -18,7 +18,8 @@ public class DancingGame : MonoBehaviour
 
     private void OnDisable()
     {
-        FindObjectOfType<AudioManager>().FadeOut("puzzleDance");
+        if (FindObjectOfType<AudioManager>() != null)
+            FindObjectOfType<AudioManager>().FadeOut("puzzleDance");
     }
 
     // Update is called once per frame
