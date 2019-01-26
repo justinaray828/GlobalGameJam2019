@@ -67,8 +67,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            _CurrentZDepth = Mathf.Lerp(transform.position.z, _DesiredZDepth, 0.1f);
-            transform.position = new Vector3(transform.position.x, transform.position.y, _CurrentZDepth);
+            float zDirection = _DesiredZDepth - _CurrentZDepth;
+            zDirection /= Mathf.Abs(zDirection);
+            
+            Controller.SimpleMove(new Vector3(0f, 0f, zDirection * Speed));
+            _CurrentZDepth = transform.position.z;
 
             if (Mathf.Abs(_CurrentZDepth - _DesiredZDepth) <= 0.1f)
             {
