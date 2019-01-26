@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2264101217423187105}
   m_Layer: 0
-  m_Name: Bedroom
+  m_Name: RoomDoorRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,7 +279,7 @@ PrefabInstance:
     - target: {fileID: 4089270216524102616, guid: d1c7e268c3f984d2ab24ee9836e14f3b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4089270216524102616, guid: d1c7e268c3f984d2ab24ee9836e14f3b,
         type: 3}
