@@ -51,4 +51,19 @@ public class MagnetSlot : MonoBehaviour
 
         return _MagnetInSlot.Index == inSlotIndex;
     }
+
+    public void Reset()
+    {
+        if (_MagnetInSlot != null)
+        {
+            _MagnetInSlot.Reset();
+        }
+        
+        _MagnetInSlot = null;
+
+        if (_Outline != null)
+        {
+            _Outline.enabled = false;
+        }
+    }
 }

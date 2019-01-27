@@ -8,11 +8,13 @@ public class FlowerHandController : MonoBehaviour
     private GameObject grabbedFlower;
     [SerializeField] private Sprite grabHand;
     GameChangeInformation gameChangeInformation;
+    
+    private const string GAMECHANGEINFORMATIONTAG = "GameChangeInformation";
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameChangeInformation = GameObject.FindWithTag(GAMECHANGEINFORMATIONTAG).GetComponent<GameChangeInformation>();
     }
 
     // Update is called once per frame

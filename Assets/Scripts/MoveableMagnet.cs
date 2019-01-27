@@ -50,4 +50,12 @@ public class MoveableMagnet : MonoBehaviour
     {
         _Outline.enabled = inSelectState;
     }
+
+    public void Reset()
+    {
+        transform.position = _StartingPosition;
+        _Outline.enabled = false;
+        _SlotHoldingMagnet = null;
+
+    }
 }

@@ -17,6 +17,17 @@ public class FridgeGameController : MonoBehaviour
         _GameChangeInfo = GameObject.FindWithTag(GAMECHANGEINFORMATIONTAG).GetComponent<GameChangeInformation>();
     }
 
+    private void OnEnable()
+    {
+        foreach (MagnetSlot slot in SlotsInOrder)
+        {
+            slot.Reset();
+        }
+
+        _SelectedSlot = null;
+        _SelectedMagnet = null;
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonUp(0))
