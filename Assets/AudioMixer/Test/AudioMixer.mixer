@@ -13,6 +13,7 @@ AudioMixerController:
   - {fileID: 24500006}
   - {fileID: 245419914924140892}
   - {fileID: 245585927406306378}
+  - {fileID: 245812332346487382}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -370,4 +371,19 @@ AudioMixerSnapshotController:
     31cdd560e5f564bc7b45ea3cfe77045f: -80
     00b91a35ffc8e433e83e4199bb012a23: -80
     9283dc1bdcb7842f4b3536f02d5220e5: 2.090601
+  m_TransitionOverrides: {}
+--- !u!245 &245812332346487382
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: fridgeSnap
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 3795d1b7e1dd64a07aa945fddd268e9a
+  m_FloatValues:
+    31cdd560e5f564bc7b45ea3cfe77045f: -20.610773
+    34c6a860012b94d3099b7be365089508: -80
+    00b91a35ffc8e433e83e4199bb012a23: -80
+    9283dc1bdcb7842f4b3536f02d5220e5: 2.4583216
   m_TransitionOverrides: {}
