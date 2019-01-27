@@ -13,10 +13,13 @@ public class PlayerMovement : MonoBehaviour
     private float _DesiredZDepth = -5f;
     private float _CurrentZDepth = -5f;
     private bool _StartedChangingDepth = false;
+    private bool iswalking = false;
 
     private const string INTERATABLEOBJECTTAG = "InteractableObject";
 
     public static PlayerMovement Instance;
+
+    public AudioManager am;
 
     void Start()
     {
@@ -30,6 +33,23 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         
         Controller.SimpleMove(new Vector3(horizontal * Speed, 0f, vertical * Speed));
+
+        if (horizontal > 0f || horizontal < 0f || vertical < 0f || vertical > 0f)
+        {
+            if (!iswalking)
+            {
+                am.PlayWalk();
+                iswalking = true;
+            }
+        }
+        else
+        {
+            if (iswalking)
+            {
+                am.StopWalk();
+                iswalking = false;
+            }
+        }
 
         ClickInteraction();
     }

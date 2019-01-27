@@ -163,6 +163,7 @@ public class AudioManager : MonoBehaviour
     private void IncreaseScore()
     {
         currentScoreNum++;
+        Play("win1");
         Debug.Log("increasing score");
         Sound s = Array.Find(sounds, sound => sound.name == "score"+currentScoreNum);
         s.source.volume = 1f;
