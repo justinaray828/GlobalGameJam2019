@@ -23,41 +23,41 @@ public class GameChangeInformation : MonoBehaviour
         FlowerGame.SetActive(false);
     }
 
-    public void ChangeToMainGame()
+    public void ChangeToMainGame(bool pass)
     {
         FlowerGame.SetActive(false);
         FridgeGame.SetActive(false);
         DancingGame.SetActive(false);
         MainGame.SetActive(true);
-    }
 
-    public void ChangeToMainGame(bool pass)
-    {
-        if(pass)
+        if (pass)
         {
-
+            FindObjectOfType<AudioManager>().ToHomeMusicOnSuccess();
         }
         else
         {
-
+            FindObjectOfType<AudioManager>().ToHomeMusicOnFailure();
         }
     }
 
     public void ChangeToDancingGame()
     {
         MainGame.SetActive(false);
+        FindObjectOfType<AudioManager>().ToDanceMusic();
         DancingGame.SetActive(true);
     }
 
     public void ChangeToFridgeGame()
     {
         MainGame.SetActive(false);
+        FindObjectOfType<AudioManager>().ToFridgeMusic();
         FridgeGame.SetActive(true);
     }
 
     public void ChangeToFlowerGame()
     {
         MainGame.SetActive(false);
+        FindObjectOfType<AudioManager>().ToFlowerMusic();
         FlowerGame.SetActive(true);
     }
 }

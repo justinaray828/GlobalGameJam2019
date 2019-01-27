@@ -53,19 +53,7 @@ public class InputControllerDancing : MonoBehaviour
                 inputCount++;
             }
 
-            EndGame(isInputCorrect);
-        }
-    }
-
-    private void EndGame(bool pass)
-    {
-        if(pass)
-        {
-            gameChangeInformation.ChangeToMainGame();
-        }
-        else
-        {
-            gameChangeInformation.ChangeToMainGame();
+            gameChangeInformation.ChangeToMainGame(isInputCorrect);
         }
     }
 
