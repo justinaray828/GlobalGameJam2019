@@ -189,6 +189,7 @@ public class AudioManager : MonoBehaviour
         IncreaseScore();
         if (currentScoreNum <= 3)
         {
+            Play("scorefinal");
             TransitionSnapshot(scoreOnSnapshot);
         }
         else { TransitionSnapshot(scorefinalSnap); }

@@ -46,9 +46,10 @@ MonoBehaviour:
   fadespeed: 0.39
   masterMixer: {fileID: 24100000, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
   scoreOnSnapshot: {fileID: 24500006, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
-  scoreOffSnapshot: {fileID: 245069090567716380, guid: da32aadd074d6418ebf4ea6e95e3ca79,
+  scoreOffSnapshot: {fileID: 245419914924140892, guid: da32aadd074d6418ebf4ea6e95e3ca79,
     type: 2}
-  scorefinalSnap: {fileID: 0}
+  scorefinalSnap: {fileID: 245585927406306378, guid: da32aadd074d6418ebf4ea6e95e3ca79,
+    type: 2}
   transitionSpeed: 1
   sounds:
   - name: walk1
@@ -93,23 +94,23 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: puzzleDance
     clip: {fileID: 8300000, guid: 25f914927e3a64339800ead3b99a8d64, type: 3}
-    output: {fileID: 243232393931649260, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    output: {fileID: 243806412801437048, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
     volume: 0
     pitch: 1
     loop: 1
     playonawake: 0
     source: {fileID: 0}
   - name: puzzleFridge
-    clip: {fileID: 8300000, guid: b1b3291d4a2174a2996e2f9df306ba71, type: 3}
-    output: {fileID: 243232393931649260, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    clip: {fileID: 8300000, guid: 7174284c89725444f90a869e67dffe18, type: 3}
+    output: {fileID: 243806412801437048, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
     volume: 0
     pitch: 1
     loop: 1
     playonawake: 0
     source: {fileID: 0}
   - name: puzzleFlower
-    clip: {fileID: 8300000, guid: 22e3811fdd5e24cc9b0232d2da648c15, type: 3}
-    output: {fileID: 243232393931649260, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    clip: {fileID: 8300000, guid: 7174284c89725444f90a869e67dffe18, type: 3}
+    output: {fileID: 243806412801437048, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
     volume: 0
     pitch: 1
     loop: 1
@@ -149,7 +150,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: scorefinal
     clip: {fileID: 8300000, guid: 547be157c3a4744dfbbd03c0c40f9298, type: 3}
-    output: {fileID: 24300002, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    output: {fileID: 243657745581759760, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
     volume: 1
     pitch: 1
     loop: 1
