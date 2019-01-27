@@ -22,6 +22,7 @@ public class GameChangeInformation : MonoBehaviour
     private bool danceSolved = false;
     private bool fridgeSolved = false;
     private bool flowerSolved = false;
+    private DistortionEffects de;
 
     SpeechBubbleSettings settings = new SpeechBubbleSettings();
 
@@ -32,6 +33,8 @@ public class GameChangeInformation : MonoBehaviour
         DancingGame.SetActive(false);
         FridgeGame.SetActive(false);
         FlowerGame.SetActive(false);
+
+        de = FindObjectOfType<DistortionEffects>();
 
         settings.MaxWidth = 300;
         settings.TimeBetweenChars = 0.03f;
@@ -85,6 +88,8 @@ public class GameChangeInformation : MonoBehaviour
                     SpeechBubbleSettings[] settingsArray = { settings };
                     SpeechBubble.Instance.DisplaySpeech(settingsArray);
                 }
+                de.SetDistortionLevel(de.GetDistortionLevel() + 1);
+
                 danceSolved = true;
             }
             else if (puzzlename == "flower")
@@ -93,6 +98,8 @@ public class GameChangeInformation : MonoBehaviour
                 {
                     FindObjectOfType<AudioManager>().ToHomeMusicOnSuccess();
                 }
+                de.SetDistortionLevel(de.GetDistortionLevel() + 1);
+
                 flowerSolved = true;
             }
             else if (puzzlename == "fridge")
@@ -101,6 +108,8 @@ public class GameChangeInformation : MonoBehaviour
                 {
                     FindObjectOfType<AudioManager>().ToHomeMusicOnSuccess();
                 }
+                de.SetDistortionLevel(de.GetDistortionLevel() + 1);
+
                 fridgeSolved = true;
             }
             //if(danceSolved && flowerSolved && fridgeSolved)
