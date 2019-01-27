@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEditor;
 
+#if UNITY_EDITOR
 public class MakeScriptableObject
 {
     [MenuItem("Assets/Create/My Scriptable Object")]
@@ -17,3 +18,4 @@ public class MakeScriptableObject
         Selection.activeObject = asset;
     }
 }
+#endif
