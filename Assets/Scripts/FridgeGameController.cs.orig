@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,10 +6,13 @@ using UnityEngine;
 public class FridgeGameController : MonoBehaviour
 {
     public List<MagnetSlot> SlotsInOrder;
-    public float TimeAllowedToFinish;
-    public TextMeshPro TimerText;
+<<<<<<< HEAD
 
     public AudioManager am;
+=======
+    public float TimeAllowedToFinish;
+    public TextMeshPro TimerText;
+>>>>>>> 758cb3b00947c97bd2f406a01db4e4c55f4a8504
     
     private MagnetSlot _SelectedSlot;
     private MoveableMagnet _SelectedMagnet;
