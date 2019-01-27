@@ -72,10 +72,11 @@ public class PlayerMovement : MonoBehaviour
             float zDirection = _DesiredZDepth - _CurrentZDepth;
             zDirection /= Mathf.Abs(zDirection);
             
-            Controller.SimpleMove(new Vector3(0f, 0f, zDirection * Speed));
+            bool didWork = Controller.SimpleMove(new Vector3(0f, 0f, zDirection * Speed));
             _CurrentZDepth = transform.position.z;
 
-            if (Mathf.Abs(_CurrentZDepth - _DesiredZDepth) <= 0.1f)
+            if (Mathf.Abs(_CurrentZDepth - _DesiredZDepth) <= 0.1f ||
+                didWork == false)
             {
                 _CurrentZDepth = _DesiredZDepth;
                 _StartedChangingDepth = false;
