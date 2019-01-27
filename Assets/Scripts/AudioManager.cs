@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
     public AudioMixer masterMixer;
     public AudioMixerSnapshot scoreOnSnapshot;
     public AudioMixerSnapshot scoreOffSnapshot;
+    public AudioMixerSnapshot scorefinalSnap;
+    [Range(.5f,5f)]
     public float transitionSpeed = 1f;
 
     public Sound[] sounds;
@@ -19,6 +21,7 @@ public class AudioManager : MonoBehaviour
     private bool fadeOutState;
     private Sound fadeInSound;
     private Sound fadeOutSound;
+    private string walking;
 
     // Start is called before the first frame update
     void Awake()
@@ -164,10 +167,31 @@ public class AudioManager : MonoBehaviour
         s.source.volume = 1f;
     }
 
+    public void PlayWalk()
+    {
+        if (walking == null)
+        {
+            string newwalk = "walk" + UnityEngine.Random.Range(1, 5);
+            Play(newwalk);
+            walking = newwalk;
+        }
+    }
+    public void StopWalk()
+    {
+        if (walking != null) { 
+            Stop(walking);
+            walking = null;
+        }
+    }
+
     public void ToHomeMusicOnSuccess()
     {
         IncreaseScore();
-        TransitionSnapshot(scoreOnSnapshot);
+        if (currentScoreNum <= 3)
+        {
+            TransitionSnapshot(scoreOnSnapshot);
+        }
+        else { TransitionSnapshot(scorefinalSnap); }
         Stop("puzzleFridge");
         Stop("puzzleFlowers");
         Stop("puzzleDance");
@@ -198,4 +222,5 @@ public class AudioManager : MonoBehaviour
         Play("puzzleFlowers");
         TransitionSnapshot(scoreOffSnapshot);
     }
+
 }

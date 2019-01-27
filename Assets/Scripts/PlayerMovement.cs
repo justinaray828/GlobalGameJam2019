@@ -7,10 +7,12 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController Controller;
 
     public float Speed;
+    public AudioManager am;
 
     private float _DesiredZDepth = -5f;
     private float _CurrentZDepth = -5f;
     private bool _StartedChangingDepth = false;
+    private bool iswalking = false;
 
     private const string INTERATABLEOBJECTTAG = "InteractableObject";
 
@@ -25,6 +27,23 @@ public class PlayerMovement : MonoBehaviour
     {
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
+
+        if(horizontal > 0f || horizontal < 0f)
+        {
+            if (!iswalking)
+            {
+                am.PlayWalk();
+                iswalking = true;
+            }
+        }
+        else
+        {
+            if (iswalking)
+            {
+                am.StopWalk();
+                iswalking = false;
+            }
+        }
 
         bool changingDepth = false;
 
