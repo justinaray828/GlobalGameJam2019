@@ -17,10 +17,10 @@ public class MenuUI : MonoBehaviour
 
     void Update()
     {
-        if( Input.GetButtonDown(cancelInputString) )
+        if( Input.GetKeyDown(KeyCode.Escape) )
         {
-            menu.SetActive(menuToggleBool);
             menuToggleBool = !menuToggleBool;
+            menu.SetActive(menuToggleBool);
         }
     }
 
