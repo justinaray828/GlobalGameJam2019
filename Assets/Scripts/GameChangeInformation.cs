@@ -31,6 +31,18 @@ public class GameChangeInformation : MonoBehaviour
         MainGame.SetActive(true);
     }
 
+    public void ChangeToMainGame(bool pass)
+    {
+        if(pass)
+        {
+
+        }
+        else
+        {
+
+        }
+    }
+
     public void ChangeToDancingGame()
     {
         MainGame.SetActive(false);
