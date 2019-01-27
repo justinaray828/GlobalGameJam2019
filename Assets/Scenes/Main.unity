@@ -505,6 +505,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8983283012052082492, guid: 66c4e96f653dd40619713a0c6ce1b70b,
+        type: 3}
+      propertyPath: fridgeSnap
+      value: 
+      objectReference: {fileID: 245812332346487382, guid: da32aadd074d6418ebf4ea6e95e3ca79,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66c4e96f653dd40619713a0c6ce1b70b, type: 3}
 --- !u!1001 &363735945
@@ -1836,6 +1842,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6032554606146084825, guid: 260b514cbda7e44f6ad929d4c2c7f3c8,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9018732502685692832, guid: 260b514cbda7e44f6ad929d4c2c7f3c8,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2047,6 +2058,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f5684fb70634c24683ec93356c96cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1273731868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4985992164052705492, guid: 260b514cbda7e44f6ad929d4c2c7f3c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 463096808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1273731869
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273731868}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 0bf0b772fd2334c53ae8d46a48b471ad, type: 3}
 --- !u!1 &1274966376 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2583560891301863903, guid: 260b514cbda7e44f6ad929d4c2c7f3c8,
