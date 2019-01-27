@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         Instance = this;
+        am = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
