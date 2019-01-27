@@ -116,7 +116,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3847759988536702166}
         m_MethodName: ExitFridgeGame
         m_Mode: 1
         m_Arguments:
@@ -807,6 +807,7 @@ MonoBehaviour:
   - {fileID: 9077397977663047860}
   TimeAllowedToFinish: 90
   TimerText: {fileID: 4191223424180038318}
+  am: {fileID: 0}
 --- !u!1 &8487007589860554045
 GameObject:
   m_ObjectHideFlags: 0
