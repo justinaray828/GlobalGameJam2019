@@ -144,12 +144,12 @@ public class InteractableObject : MonoBehaviour
                 settings2.Text = "Text 2";
                 break;
             case PictureType.Book:
-                settings1.Text = "Book pic text";
-                settings2.Text = "Text 2";
+                settings1.Text = "That taco recipe sounds delicious.";
+                settings2.Text = "It's always important to add love.";
                 break;
             case PictureType.Dancing:
-                settings1.Text = "Dancing pic text";
-                settings2.Text = "Text 2";
+                settings1.Text = "If only you knew how to dance.";
+                settings2.Text = "You could take that girl next door waltzing.";
                 break;
             case PictureType.Honeymoon:
                 settings1.Text = "Maybe you’re going to the beach with mom and dad today?";
@@ -166,8 +166,8 @@ public class InteractableObject : MonoBehaviour
                 settings2.MaxWidth = 500;
                 break;
             case PictureType.Snow:
-                settings1.Text = "Snow pic text";
-                settings2.Text = "Text 2";
+                settings1.Text = "You remember going skiing with your family.";
+                settings2.Text = "Who was the lady that was with you though?";
                 break;
             default: 
                 break;
