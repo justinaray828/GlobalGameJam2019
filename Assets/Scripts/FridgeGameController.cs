@@ -203,6 +203,6 @@ public class FridgeGameController : MonoBehaviour
             index++;
         }
         
-        _GameChangeInfo.ChangeToMainGame();
+        _GameChangeInfo.ChangeToMainGame(true, "fridge");
     }
 }
