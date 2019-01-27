@@ -1840,6 +1840,11 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.y
       value: 900
       objectReference: {fileID: 0}
+    - target: {fileID: 5079302393207972355, guid: 260b514cbda7e44f6ad929d4c2c7f3c8,
+        type: 3}
+      propertyPath: am
+      value: 
+      objectReference: {fileID: 1327715963}
     - target: {fileID: 6032554606280089644, guid: 260b514cbda7e44f6ad929d4c2c7f3c8,
         type: 3}
       propertyPath: m_UiScaleMode
@@ -1975,6 +1980,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 463096808}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1327715963 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8983283012052082492, guid: 66c4e96f653dd40619713a0c6ce1b70b,
+    type: 3}
+  m_PrefabInstance: {fileID: 324098798}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b6b0711dd46548b28ce03f65c100739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1378475264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4779893144246707392, guid: 260b514cbda7e44f6ad929d4c2c7f3c8,
