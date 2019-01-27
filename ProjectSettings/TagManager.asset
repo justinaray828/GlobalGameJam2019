@@ -7,6 +7,10 @@ TagManager:
   - InteractableObject
   - GameChangeInformation
   - ImageClue
+  - Flower
+  - RedRose
+  - PurpleRose
+  - WhiteRose
   layers:
   - Default
   - TransparentFX
