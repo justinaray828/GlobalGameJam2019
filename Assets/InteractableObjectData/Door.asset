@@ -10,20 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57218d00571437b488a3cb3f1d4600db, type: 3}
-  m_Name: Bed
+  m_Name: Door
   m_EditorClassIdentifier: 
   interactableObjectType: 0
   miniGameType: 0
-  objectName: Object Name
+  objectName: Door
   outputText:
-  - Text: We've had this dang thing for 15 years... Or was it 20?
-    TimeUntilClose: 1
+  - Text: Where does that door lead again?
+    TimeUntilClose: 2
     TimeBetweenChars: 0.03
-    WriteTextTime: 2
-    MaxWidth: 400
-  - Text: Basically cardboard, no support at all!
-    TimeUntilClose: 1
-    TimeBetweenChars: 0.03
-    WriteTextTime: 2
-    MaxWidth: 200
+    WriteTextTime: 0
+    MaxWidth: 300
   clue: {fileID: 0}

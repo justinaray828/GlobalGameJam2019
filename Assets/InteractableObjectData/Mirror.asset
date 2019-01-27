@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57218d00571437b488a3cb3f1d4600db, type: 3}
-  m_Name: Bed
+  m_Name: Mirror
   m_EditorClassIdentifier: 
   interactableObjectType: 0
   miniGameType: 0
-  objectName: Object Name
+  objectName: Mirror
   outputText:
-  - Text: We've had this dang thing for 15 years... Or was it 20?
+  - Text: Who is that?
     TimeUntilClose: 1
-    TimeBetweenChars: 0.03
+    TimeBetweenChars: 0
     WriteTextTime: 2
-    MaxWidth: 400
-  - Text: Basically cardboard, no support at all!
-    TimeUntilClose: 1
-    TimeBetweenChars: 0.03
-    WriteTextTime: 2
-    MaxWidth: 200
+    MaxWidth: 300
+  - Text: Oh, it's me...
+    TimeUntilClose: 2
+    TimeBetweenChars: 0
+    WriteTextTime: 3
+    MaxWidth: 300
   clue: {fileID: 0}
