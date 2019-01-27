@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using cakeslice;
 using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
@@ -17,6 +18,8 @@ public class InteractableObject : MonoBehaviour
     private ParticleSystem ParticleSys;
     private MeshCollider Collider;
 
+    private Outline _Outline;
+
     private void Start()
     {
         gameChangeInformation = GameObject.FindGameObjectWithTag(GAMECHANGEINFORMATIONTAG).GetComponent<GameChangeInformation>();
@@ -28,6 +31,10 @@ public class InteractableObject : MonoBehaviour
         particleSystem.transform.localRotation = Quaternion.identity;
 
         Collider = GetComponent<MeshCollider>();
+
+        _Outline = gameObject.AddComponent<Outline>();
+        _Outline.enabled = false;
+        _Outline.color = 1;
     }
 
     private void Update()
@@ -46,6 +53,28 @@ public class InteractableObject : MonoBehaviour
                 ParticleSys.Stop();
             }
         }
+    }
+
+    public bool SetHover(bool inHover)
+    {
+        if (PlayerIsNear() == false)
+        {
+            _Outline.enabled = false;
+            return false;
+        }
+        
+        if (_Outline.enabled == false &&
+            inHover == true)
+        {
+            _Outline.enabled = true;
+        }
+        else if (_Outline.enabled == true &&
+                 inHover == false)
+        {
+            _Outline.enabled = false;
+        }
+
+        return true;
     }
 
     /// <summary>

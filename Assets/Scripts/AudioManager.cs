@@ -6,6 +6,13 @@ public class AudioManager : MonoBehaviour
 {
     [Range(.05f, 2f)]
     public float fadespeed = 1f;
+    public AudioMixer masterMixer;
+    public AudioMixerSnapshot scoreOnSnapshot;
+    public AudioMixerSnapshot scoreOffSnapshot;
+    public AudioMixerSnapshot scorefinalSnap;
+    [Range(.5f,5f)]
+    public float transitionSpeed = 1f;
+
     public Sound[] sounds;
     public static AudioManager instance;
 
@@ -14,6 +21,7 @@ public class AudioManager : MonoBehaviour
     private bool fadeOutState;
     private Sound fadeInSound;
     private Sound fadeOutSound;
+    private string walking;
 
     // Start is called before the first frame update
     void Awake()
@@ -38,6 +46,8 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.playOnAwake = s.playonawake;
 
+            s.source.outputAudioMixerGroup = s.output;
+
             //sources were not truly playing on awake. Perhaps they were being created after awake had been called?
             //regardless, this manually takes 
             if (s.playonawake)
@@ -47,12 +57,22 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {   
-        currentScoreNum = 2;
-        for (int i = currentScoreNum; i > 0; i--)
+        //start all score tracks simultaneously
+        currentScoreNum = 1;
+        for (int i = 4; i > 0; i--)
         {
             Play("score" + i);
         }
 
+        //set all but first score track to 0 volume
+        currentScoreNum = 1;
+        for (int i = 4; i > 1; i--)
+        {
+            Sound s = Array.Find(sounds, sound => sound.name == "score"+i);
+            s.source.volume = 0f;
+        }
+        //turn score volume on, puzzle volume off
+        TransitionSnapshot(scoreOnSnapshot);
     }
 
     void Update()
@@ -69,6 +89,7 @@ public class AudioManager : MonoBehaviour
             if (fadeOutSound.source.volume <= 0f)
                 fadeOutState = false;
         }
+
     }
 
     public void Play(string name)
@@ -130,6 +151,11 @@ public class AudioManager : MonoBehaviour
         fadeOutState = true;
     }
 
+    public void TransitionSnapshot(AudioMixerSnapshot snapshot)
+    {
+        snapshot.TransitionTo(transitionSpeed);
+    }
+
     /// <summary>
     /// To be called when new memory has been remembered. This
     /// will activate the next layer of the musical score
@@ -137,51 +163,69 @@ public class AudioManager : MonoBehaviour
     private void IncreaseScore()
     {
         currentScoreNum++;
+        Play("win1");
+        Debug.Log("increasing score");
+        Sound s = Array.Find(sounds, sound => sound.name == "score"+currentScoreNum);
+        s.source.volume = 1f;
+    }
+
+    public void PlayWalk()
+    {
+        if (walking == null)
+        {
+            string newwalk = "walk" + UnityEngine.Random.Range(1, 5);
+            Play(newwalk);
+            walking = newwalk;
+        }
+    }
+    public void StopWalk()
+    {
+        if (walking != null) { 
+            Stop(walking);
+            walking = null;
+        }
     }
 
     public void ToHomeMusicOnSuccess()
     {
         IncreaseScore();
-        for (int i = currentScoreNum; i > 0; i--)
+        if (currentScoreNum > 3)
         {
-            Play("score" + i);
+            Play("scorefinal");
+            TransitionSnapshot(scorefinalSnap);
         }
+        else { 
+            TransitionSnapshot(scoreOnSnapshot);
+        }
+        Stop("puzzleFridge");
+        Stop("puzzleFlower");
+        Stop("puzzleDance");
     }
 
     public void ToHomeMusicOnFailure()
     {
-        for (int i = currentScoreNum; i > 0; i--)
-        {
-            Play("score" + i);
-        }
+        TransitionSnapshot(scoreOnSnapshot);
+        Stop("puzzleFridge");
+        Stop("puzzleFlower");
+        Stop("puzzleDance");
     }
 
     public void ToDanceMusic()
     {
-        if(currentScoreNum > 0) {
-            FadeOut("score" + currentScoreNum);
-            Play("puzzleDance");
-            FadeIn("puzzleDance");
-        }
+        Play("puzzleDance");
+        TransitionSnapshot(scoreOffSnapshot);
     }
 
     public void ToFridgeMusic()
     {
-        if (currentScoreNum > 0)
-        {
-            FadeOut("score" + currentScoreNum);
-            Play("puzzleFridge");
-            FadeIn("puzzleFridge");
-        }
+        Play("puzzleFridge");
+        TransitionSnapshot(scoreOffSnapshot);
     }
 
     public void ToFlowerMusic()
     {
-        if (currentScoreNum > 0)
-        {
-            FadeOut("score" + currentScoreNum);
-            Play("puzzleFlower");
-            FadeIn("puzzleFlower");
-        }
+        Play("puzzleFlower");
+        TransitionSnapshot(scoreOffSnapshot);
     }
+
 }

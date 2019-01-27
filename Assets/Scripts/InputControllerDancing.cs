@@ -36,6 +36,20 @@ public class InputControllerDancing : MonoBehaviour
         CheckInputs();
     }
 
+    void Awake()
+    {
+        disableAllDances();
+        inputCount = 0;
+        Debug.Log("awake");
+    }
+
+    void onEnable()
+    {
+        disableAllDances();
+        inputCount = 0;
+        Debug.Log("onenable");
+    }
+
     private void CheckInputs()
     {
         if (inputCount >= 6)
@@ -52,20 +66,10 @@ public class InputControllerDancing : MonoBehaviour
 
                 inputCount++;
             }
-
-            EndGame(isInputCorrect);
-        }
-    }
-
-    private void EndGame(bool pass)
-    {
-        if(pass)
-        {
-            gameChangeInformation.ChangeToMainGame();
-        }
-        else
-        {
-            gameChangeInformation.ChangeToMainGame();
+            disableAllDances();
+            inputCount = 0;
+            inputArray = new int[6];
+            gameChangeInformation.ChangeToMainGame(isInputCorrect, "dance");
         }
     }
 
