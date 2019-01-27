@@ -179,6 +179,13 @@ public class InteractableObject : MonoBehaviour
 
     private void MiniGameInteraction()
     {
+        if(interactableObjectData.miniGameType.ToString() == "Flowers")
+        {
+            if (!gameChangeInformation.CheckIfFlowerAllowed())
+            {
+                return;
+            }
+        }
         FadedToAndFromBlackManager.Instance.RegisterForFinishedFading(ChangeToMiniGameOnFadeFinished);
         FadedToAndFromBlackManager.Instance.FadeToBlack();
     }
@@ -198,7 +205,8 @@ public class InteractableObject : MonoBehaviour
                 gameChangeInformation.ChangeToFridgeGame();
                 break;
             case InteractableObjectData.MiniGameType.Flowers:
-                gameChangeInformation.ChangeToFlowerGame();
+                if(gameChangeInformation.CheckIfFlowerAllowed())
+                    gameChangeInformation.ChangeToFlowerGame();
                 break;
             default:
                 Debug.LogError("Mini game was activated but no mini game was chosen");
