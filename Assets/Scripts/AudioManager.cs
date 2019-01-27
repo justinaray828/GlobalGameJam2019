@@ -48,6 +48,8 @@ public class AudioManager : MonoBehaviour
 
             s.source.outputAudioMixerGroup = s.output;
 
+            s.originalVolume = s.volume;
+
             //sources were not truly playing on awake. Perhaps they were being created after awake had been called?
             //regardless, this manually takes 
             if (s.playonawake)
@@ -102,7 +104,7 @@ public class AudioManager : MonoBehaviour
         }
         Debug.Log("playing: " + name);
         s.source.Play();
-        s.source.volume = 1f;
+        s.source.volume = s.originalVolume;
     }
 
     public void Stop(string name)
