@@ -1,6 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum PictureType
+{
+    Snow, 
+    Honeymoon, 
+    Dancing, 
+    Kid, 
+    Baby, 
+    Mountain, 
+    Book
+}
 
 [CreateAssetMenu(fileName = "Data", menuName = "InteractableObjectData", order = 1)]
 public class InteractableObjectData : ScriptableObject
@@ -12,4 +22,5 @@ public class InteractableObjectData : ScriptableObject
     public string objectName = "Object Name";
     public SpeechBubbleSettings[] outputText = {};
     public GameObject clue; 
+    public PictureType clueType;
 }

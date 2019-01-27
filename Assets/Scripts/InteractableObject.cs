@@ -120,7 +120,46 @@ public class InteractableObject : MonoBehaviour
 
     private void ImageInteraction()
     {
-        Instantiate(interactableObjectData.clue, imageClueCanvas.transform);
+        GameObject image = GameObject.Instantiate(interactableObjectData.clue, imageClueCanvas.transform);
+        CloseImageInput imageClose = image.GetComponentInChildren<CloseImageInput>();
+        imageClose.RegisterOnClose(ImageCloseSpeech);
+    }
+
+    private void ImageCloseSpeech(CloseImageInput imageClose)
+    {
+        SpeechBubbleSettings settings = new SpeechBubbleSettings();
+        settings.MaxWidth = 300;
+        settings.TimeUntilClose = 3;
+        settings.TimeBetweenChars = 0.03f;
+        switch(interactableObjectData.clueType)
+        {
+            case PictureType.Baby:
+                settings.Text = "Baby pic text";
+                break;
+            case PictureType.Book:
+                settings.Text = "Book pic text";
+                break;
+            case PictureType.Dancing:
+                settings.Text = "Dancing pic text";
+                break;
+            case PictureType.Honeymoon:
+                settings.Text = "Honeymoon pic text";
+                break;
+            case PictureType.Kid:
+                settings.Text = "Kid pic text";
+                break;
+            case PictureType.Mountain:
+                settings.Text = "Mountain pic text";
+                break;
+            case PictureType.Snow:
+                settings.Text = "Snow pic text";
+                break;
+            default: 
+                break;
+        }
+        SpeechBubbleSettings[] settingsArray = {settings};
+        SpeechBubble.Instance.DisplaySpeech(settingsArray);
+        imageClose.UnregisterOnClose(ImageCloseSpeech);
     }
 
     private void MiniGameInteraction()
