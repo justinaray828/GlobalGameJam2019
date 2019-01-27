@@ -228,4 +228,9 @@ public class FridgeGameController : MonoBehaviour
         
         _GameChangeInfo.ChangeToMainGame(true, "fridge");
     }
+
+    public void ExitFridgeGame()
+    {
+        _GameChangeInfo.ChangeToMainGame(false, "fridge");
+    }
 }
