@@ -236,3 +236,11 @@ MonoBehaviour:
     loop: 0
     playonawake: 0
     source: {fileID: 0}
+  - name: magnet
+    clip: {fileID: 8300000, guid: 954b7411d79384906b325be802ba1d7e, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playonawake: 0
+    source: {fileID: 0}
