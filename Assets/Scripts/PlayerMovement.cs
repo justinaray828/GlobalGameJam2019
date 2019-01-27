@@ -109,7 +109,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) &&
+            interactable != null)
         {
             interactable.Interact();
         }

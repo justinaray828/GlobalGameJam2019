@@ -90,6 +90,8 @@ public class GameChangeInformation : MonoBehaviour
         MainGame.SetActive(false);
         FindObjectOfType<AudioManager>().ToDanceMusic();
         DancingGame.SetActive(true);
+        
+        FadedToAndFromBlackManager.Instance.FadeFromBlack();
     }
 
     public void ChangeToFridgeGame()
@@ -97,6 +99,8 @@ public class GameChangeInformation : MonoBehaviour
         MainGame.SetActive(false);
         FindObjectOfType<AudioManager>().ToFridgeMusic();
         FridgeGame.SetActive(true);
+        
+        FadedToAndFromBlackManager.Instance.FadeFromBlack();
     }
 
     public void ChangeToFlowerGame()
@@ -104,5 +108,7 @@ public class GameChangeInformation : MonoBehaviour
         MainGame.SetActive(false);
         FindObjectOfType<AudioManager>().ToFlowerMusic();
         FlowerGame.SetActive(true);
+        
+        FadedToAndFromBlackManager.Instance.FadeFromBlack();
     }
 }

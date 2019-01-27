@@ -119,6 +119,14 @@ public class InteractableObject : MonoBehaviour
 
     private void MiniGameInteraction()
     {
+        FadedToAndFromBlackManager.Instance.RegisterForFinishedFading(ChangeToMiniGameOnFadeFinished);
+        FadedToAndFromBlackManager.Instance.FadeToBlack();
+    }
+
+    private void ChangeToMiniGameOnFadeFinished()
+    {
+        FadedToAndFromBlackManager.Instance.UnregisterForFinishedFading(ChangeToMiniGameOnFadeFinished);
+        
         Debug.Log("Game Change to: " + interactableObjectData.miniGameType.ToString());
 
         switch (interactableObjectData.miniGameType)

@@ -126,6 +126,11 @@ namespace cakeslice
 
         void Start()
         {
+            if (Application.isPlaying == false)
+            {
+                return;
+            }
+            
             CreateMaterialsIfNeeded();
             UpdateMaterialsPublicProperties();
 
@@ -137,12 +142,24 @@ namespace cakeslice
                     sourceCamera = Camera.main;
             }
 
-            if(outlineCamera == null)
+//            if(outlineCamera == null)
+//            {
+//                GameObject cameraGameObject = new GameObject("Outline Camera");
+//                cameraGameObject.transform.parent = sourceCamera.transform;
+//                outlineCamera = cameraGameObject.AddComponent<Camera>();
+//                outlineCamera.enabled = false;
+//            }
+
+            foreach (Transform child in transform)
             {
-                GameObject cameraGameObject = new GameObject("Outline Camera");
-                cameraGameObject.transform.parent = sourceCamera.transform;
-                outlineCamera = cameraGameObject.AddComponent<Camera>();
-                outlineCamera.enabled = false;
+                Camera cam = child.GetComponent<Camera>();
+
+                if (cam != null &&
+                    child.gameObject.name == "Outline Camera")
+                {
+                    outlineCamera = cam;
+                    break;
+                }
             }
 
             renderTexture = new RenderTexture(sourceCamera.pixelWidth, sourceCamera.pixelHeight, 16, RenderTextureFormat.Default);
@@ -263,6 +280,11 @@ namespace cakeslice
 
         void OnRenderImage(RenderTexture source, RenderTexture destination)
         {
+            if (Application.isPlaying == false)
+            {
+                return;
+            }
+            
             outlineShaderMaterial.SetTexture("_OutlineSource", renderTexture);
 
             if(addLinesBetweenColors)
