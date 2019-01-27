@@ -1455,8 +1455,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1224e1e0f173a7a47b03a4dea7f4eb3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactableObjectData: {fileID: 11400000, guid: ca106177bdcb2af4fab31c220e2f7771,
+  interactableObjectData: {fileID: 11400000, guid: 8fbce26f4aed247a3ba684c9a612cdbb,
     type: 2}
+  ParticleSystemAttachmentPoint: {fileID: 1483211096}
+  ParticleSystemPrefab: {fileID: 3764818800248967473, guid: fac058f2d2151d345a705a4c44cdcb75,
+    type: 3}
 --- !u!64 &1483211098
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1566,7 +1569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Controller: {fileID: 949705282}
   Speed: 5
-  am: {fileID: 0}
+  Model: {fileID: 0}
 --- !u!1 &1632084413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,6 +1603,7 @@ MonoBehaviour:
   DancingGame: {fileID: 1177089915}
   FridgeGame: {fileID: 732738016}
   FlowerGame: {fileID: 732738016}
+  speechbub: {fileID: 0}
 --- !u!4 &1632084415
 Transform:
   m_ObjectHideFlags: 0

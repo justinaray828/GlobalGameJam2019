@@ -163,6 +163,7 @@ public class AudioManager : MonoBehaviour
     private void IncreaseScore()
     {
         currentScoreNum++;
+        Debug.Log("increasing score");
         Sound s = Array.Find(sounds, sound => sound.name == "score"+currentScoreNum);
         s.source.volume = 1f;
     }
@@ -187,14 +188,16 @@ public class AudioManager : MonoBehaviour
     public void ToHomeMusicOnSuccess()
     {
         IncreaseScore();
-        if (currentScoreNum <= 3)
+        if (currentScoreNum > 3)
         {
             Play("scorefinal");
+            TransitionSnapshot(scorefinalSnap);
+        }
+        else { 
             TransitionSnapshot(scoreOnSnapshot);
         }
-        else { TransitionSnapshot(scorefinalSnap); }
         Stop("puzzleFridge");
-        Stop("puzzleFlowers");
+        Stop("puzzleFlower");
         Stop("puzzleDance");
     }
 
@@ -202,7 +205,7 @@ public class AudioManager : MonoBehaviour
     {
         TransitionSnapshot(scoreOnSnapshot);
         Stop("puzzleFridge");
-        Stop("puzzleFlowers");
+        Stop("puzzleFlower");
         Stop("puzzleDance");
     }
 
@@ -220,7 +223,7 @@ public class AudioManager : MonoBehaviour
 
     public void ToFlowerMusic()
     {
-        Play("puzzleFlowers");
+        Play("puzzleFlower");
         TransitionSnapshot(scoreOffSnapshot);
     }
 
