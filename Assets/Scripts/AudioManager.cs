@@ -38,6 +38,8 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.playOnAwake = s.playonawake;
 
+            s.source.outputAudioMixerGroup = s.output;
+
             //sources were not truly playing on awake. Perhaps they were being created after awake had been called?
             //regardless, this manually takes 
             if (s.playonawake)
