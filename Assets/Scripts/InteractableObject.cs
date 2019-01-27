@@ -15,6 +15,7 @@ public class InteractableObject : MonoBehaviour
     public Transform ParticleSystemAttachmentPoint;
     public GameObject ParticleSystemPrefab;
     private ParticleSystem ParticleSys;
+    private MeshCollider Collider;
 
     private void Start()
     {
@@ -25,6 +26,28 @@ public class InteractableObject : MonoBehaviour
         particleSystem.transform.parent = ParticleSystemAttachmentPoint;
         particleSystem.transform.localPosition = Vector3.zero;
         particleSystem.transform.localRotation = Quaternion.identity;
+
+        Collider = GetComponent<MeshCollider>();
+    }
+
+    private void Update()
+    {
+        Vector3 playerPosition = PlayerMovement.Instance.transform.position;
+
+        if (Vector3.Distance(playerPosition, Collider.bounds.center) <= 10f)
+        {
+            if (ParticleSys.isPlaying == false)
+            {
+                ParticleSys.Play();
+            }
+        }
+        else
+        {
+            if (ParticleSys.isPlaying == true)
+            {
+                ParticleSys.Stop();
+            }
+        }
     }
 
     /// <summary>

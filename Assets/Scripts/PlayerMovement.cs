@@ -16,6 +16,13 @@ public class PlayerMovement : MonoBehaviour
 
     private const string INTERATABLEOBJECTTAG = "InteractableObject";
 
+    public static PlayerMovement Instance;
+
+    void Start()
+    {
+        Instance = this;
+    }
+
     // Update is called once per frame
     void Update()
     {
