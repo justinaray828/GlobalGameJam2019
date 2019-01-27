@@ -2,7 +2,6 @@
 using System.Collections;
 
 
-
 [CreateAssetMenu(fileName = "Data", menuName = "InteractableObjectData", order = 1)]
 public class InteractableObjectData : ScriptableObject
 {
@@ -12,4 +11,5 @@ public class InteractableObjectData : ScriptableObject
     public MiniGameType miniGameType = MiniGameType.NoGame;
     public string objectName = "Object Name";
     public string outputText = "Output Text";
+    public GameObject clue; 
 }
