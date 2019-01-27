@@ -12,10 +12,19 @@ public class InteractableObject : MonoBehaviour
     private GameObject imageClueCanvas;
     private const string IMAGECLUETAG = "ImageClue";
 
+    public Transform ParticleSystemAttachmentPoint;
+    public GameObject ParticleSystemPrefab;
+    private ParticleSystem ParticleSys;
+
     private void Start()
     {
         gameChangeInformation = GameObject.FindGameObjectWithTag(GAMECHANGEINFORMATIONTAG).GetComponent<GameChangeInformation>();
         imageClueCanvas = GameObject.FindGameObjectWithTag(IMAGECLUETAG);
+        GameObject particleSystem = GameObject.Instantiate(ParticleSystemPrefab);
+        ParticleSys = particleSystem.GetComponent<ParticleSystem>();
+        particleSystem.transform.parent = ParticleSystemAttachmentPoint;
+        particleSystem.transform.localPosition = Vector3.zero;
+        particleSystem.transform.localRotation = Quaternion.identity;
     }
 
     /// <summary>
