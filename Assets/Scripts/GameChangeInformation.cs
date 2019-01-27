@@ -21,14 +21,23 @@ public class GameChangeInformation : MonoBehaviour
     private bool fridgeSolved = false;
     private bool flowerSolved = false;
 
+    SpeechBubbleSettings settings = new SpeechBubbleSettings();
+
+
     private void Start()
     {
         MainGame.SetActive(true);
         DancingGame.SetActive(false);
         FridgeGame.SetActive(false);
         FlowerGame.SetActive(false);
+
+        settings.MaxWidth = 300;
+        settings.TimeBetweenChars = 0.03f;
+        settings.TimeUntilClose = 3;
     }
 
+
+    //TODO: set distortion level 
     /// <summary>
     /// Changes focus back to main game. Pass in boolean
     /// on whether puzzle was completed.
@@ -39,31 +48,28 @@ public class GameChangeInformation : MonoBehaviour
     /// <param name="puzzlename">Puzzlename.</param>
     public void ChangeToMainGame(bool pass, string puzzlename = "none")
     {
-        if(puzzlename == "none")
+        if (puzzlename == "none")
             Debug.LogWarning("ChangeToMainGame called without 2nd parameter");
         FlowerGame.SetActive(false);
         FridgeGame.SetActive(false);
         DancingGame.SetActive(false);
         MainGame.SetActive(true);
 
-        SpeechBubbleSettings settings = new SpeechBubbleSettings();
-        settings.MaxWidth = 300;
-        settings.TimeBetweenChars = 0.03f;
-        settings.TimeUntilClose = 3;
+
 
         if (pass)
         {
-            if (puzzlename == "dance") 
+            if (puzzlename == "dance")
             {
                 if (danceSolved == false)
                 {
                     FindObjectOfType<AudioManager>().ToHomeMusicOnSuccess();
                     settings.Text = "That was our wedding dance. It took me forever to learn it.";
-                    SpeechBubbleSettings[] settingsArray = {settings};
+                    SpeechBubbleSettings[] settingsArray = { settings };
                     SpeechBubble.Instance.DisplaySpeech(settingsArray);
                 }
                 danceSolved = true;
-                }
+            }
             else if (puzzlename == "flower")
             {
                 if (flowerSolved == false)
@@ -80,9 +86,10 @@ public class GameChangeInformation : MonoBehaviour
                 }
                 fridgeSolved = true;
             }
-            //if(danceSolved && flowerSolved && fridgeSolved)
+            if (danceSolved && flowerSolved && fridgeSolved)
                 //TODO:insert final game ending events
-            Debug.Log("reached success");
+
+                Debug.Log("reached success");
             //TODO: insert flavor text for both success and failure.
             FindObjectOfType<AudioManager>().ToHomeMusicOnFailure();
         }
@@ -98,7 +105,7 @@ public class GameChangeInformation : MonoBehaviour
         MainGame.SetActive(false);
         FindObjectOfType<AudioManager>().ToDanceMusic();
         DancingGame.SetActive(true);
-        
+
         FadedToAndFromBlackManager.Instance.FadeFromBlack();
     }
 
@@ -107,7 +114,7 @@ public class GameChangeInformation : MonoBehaviour
         MainGame.SetActive(false);
         FindObjectOfType<AudioManager>().ToFridgeMusic();
         FridgeGame.SetActive(true);
-        
+
         FadedToAndFromBlackManager.Instance.FadeFromBlack();
     }
 
@@ -116,7 +123,32 @@ public class GameChangeInformation : MonoBehaviour
         MainGame.SetActive(false);
         FindObjectOfType<AudioManager>().ToFlowerMusic();
         FlowerGame.SetActive(true);
-        
+
         FadedToAndFromBlackManager.Instance.FadeFromBlack();
+    }
+
+    public bool CheckIfFlowerAllowed() //could be done with out parameter
+    {
+        if (danceSolved && fridgeSolved)
+        {
+            return true;
+        }
+        else
+        {
+            if (!danceSolved && !fridgeSolved)
+                settings.Text = "I want to return to the fridge and radio before I mess with that";
+            else if (!danceSolved)
+            {
+                settings.Text = "I want to return to the radio before I mess with this";
+            }
+            else
+            {
+                settings.Text = "I want to return to the fridge before I mess with this";
+            }
+            SpeechBubbleSettings[] settingsArray = { settings };
+            SpeechBubble.Instance.DisplaySpeech(settingsArray);
+
+            return false;
+        }
     }
 }

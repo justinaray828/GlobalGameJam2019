@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public AudioMixerSnapshot scoreOnSnapshot;
     public AudioMixerSnapshot scoreOffSnapshot;
     public AudioMixerSnapshot scorefinalSnap;
+    public AudioMixerSnapshot fridgeSnap;
     [Range(.5f,5f)]
     public float transitionSpeed = 1f;
 
@@ -58,9 +59,10 @@ public class AudioManager : MonoBehaviour
     }
 
     void Start()
-    {   
+    {
+        //turn score volume on, puzzle volume off
+        TransitionSnapshot(scoreOnSnapshot);
         //start all score tracks simultaneously
-        currentScoreNum = 1;
         for (int i = 4; i > 0; i--)
         {
             Play("score" + i);
@@ -70,11 +72,9 @@ public class AudioManager : MonoBehaviour
         currentScoreNum = 1;
         for (int i = 4; i > 1; i--)
         {
-            Sound s = Array.Find(sounds, sound => sound.name == "score"+i);
+            Sound s = Array.Find(sounds, sound => sound.name == "score" + i);
             s.source.volume = 0f;
         }
-        //turn score volume on, puzzle volume off
-        TransitionSnapshot(scoreOnSnapshot);
     }
 
     void Update()
@@ -220,8 +220,7 @@ public class AudioManager : MonoBehaviour
 
     public void ToFridgeMusic()
     {
-        Play("puzzleFridge");
-        TransitionSnapshot(scoreOffSnapshot);
+        TransitionSnapshot(fridgeSnap);
     }
 
     public void ToFlowerMusic()
