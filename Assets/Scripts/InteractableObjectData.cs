@@ -10,6 +10,6 @@ public class InteractableObjectData : ScriptableObject
     public enum MiniGameType { NoGame, Dancing, Fridge, Flowers};
     public MiniGameType miniGameType = MiniGameType.NoGame;
     public string objectName = "Object Name";
-    public string outputText = "Output Text";
+    public SpeechBubbleSettings[] outputText = {};
     public GameObject clue; 
 }

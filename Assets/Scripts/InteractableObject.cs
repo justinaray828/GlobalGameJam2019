@@ -39,7 +39,7 @@ public class InteractableObject : MonoBehaviour
 
     private void TextInteraction()
     {
-
+        SpeechBubble.Instance.DisplaySpeech(interactableObjectData.outputText);
     }
 
     private void ImageInteraction()

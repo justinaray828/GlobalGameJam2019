@@ -3,6 +3,20 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
+[System.Serializable]
+public class SpeechBubbleSettings
+{
+    public string Text;
+
+    public int TimeUntilClose = 5;
+
+    public float TimeBetweenChars = 0.03F;
+
+    public int WriteTextTime = 0;
+
+    public int MaxWidth = 200;
+}
+
 public class SpeechBubble : MonoBehaviour
 {
     private class MarkupLetter
@@ -15,10 +29,9 @@ public class SpeechBubble : MonoBehaviour
     public Text UITextComponent;
     public int FramesToOpen;
     public HorizontalLayoutGroup HorizontalGroup;
+    private SpeechBubbleSettings[] _Bubbles = {};
     private float _TimeBetweenChars;
-    private float _DefaultTimeBetweenChars = 0.03F;
     private float _Timer;
-    private int _DefaultMaxWidth = 200;
     private List<MarkupLetter> _MarkupText = new List<MarkupLetter>();
     private string[] _MarkupColors = {"FFFFFF33", "FFFFFF66", "FFFFFF99", "FFFFFFCC", "FFFFFFFF"};
     private float _MarkupTimer;
@@ -26,15 +39,15 @@ public class SpeechBubble : MonoBehaviour
     private int _TrueWidth;
     private float _TrueHeight;
     private int _DefaultFramesToOpen = 10;
-    private int _DefaultTimeToClose = 5;
     private int _TimeToClose;
     private float _TimeOpened;
+
+    public static SpeechBubble Instance;
 
     // Start is called before the first frame update
     void Start()
     {
-        // DisplaySpeech("Lorem ipsum dolor sit amet, consectetur adipLorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam purus tellus, placerat in dolor sit amet, iaculis porta mauris. Proin lobortis posuere libero vel facilisis. Etiam molestie enim a sodales bibendum. Pellentesque blandit risus vitae nisl egestas commodo. In lectus sem, iaculis eget urna vel, commodo faucibus erat. Integer efficitur aliquet arcu nec hendrerit.", 400);
-        DisplaySpeech("Almost before we knew it we had left the ground...", 0, _DefaultMaxWidth);
+        Instance = this;
     }
 
     // Update is called once per frame
@@ -45,14 +58,31 @@ public class SpeechBubble : MonoBehaviour
         {
             frames = FramesToOpen;
         }
+
         if (_TimeOpened >= _TimeToClose)
         {
             UITextComponent.text = "";
-            HorizontalGroup.padding = new RectOffset(0, 0, 0, 0);
-            if (BlackBox.minHeight != 0 || BlackBox.minWidth != 0)
+
+            if (_Bubbles.Length > 1)
+            {
+                ResetValues();
+                SpeechBubbleSettings[] newBubbles = new SpeechBubbleSettings[_Bubbles.Length - 1];
+                for (int index = 1; index < _Bubbles.Length; index++)
+                {
+                    newBubbles[index - 1] = _Bubbles[index];
+                }
+                DisplaySpeech(newBubbles);
+            }
+
+            if (BlackBox.minHeight > 0 || BlackBox.minWidth > 0)
             {
                 BlackBox.minHeight -= _TrueHeight / frames;
-                BlackBox.minWidth -= _TrueWidth / frames;
+                BlackBox.minWidth -= _TrueWidth / frames; 
+            } else
+            {
+                BlackBox.minHeight = 0;
+                BlackBox.minWidth = 0;
+                ResetValues();
             }
             return;
         }
@@ -61,6 +91,16 @@ public class SpeechBubble : MonoBehaviour
         {
             BlackBox.minHeight += _TrueHeight / frames;
             BlackBox.minWidth += _TrueWidth / frames;
+            return;
+        }
+        else
+        {
+            BlackBox.minHeight = _TrueHeight;
+            BlackBox.minWidth = _TrueWidth;
+        }
+
+        if (_FullText == "")
+        {
             return;
         }
 
@@ -109,30 +149,27 @@ public class SpeechBubble : MonoBehaviour
         return fullString;
     }
 
-    public void DisplaySpeech(string speech, int timeToClose = 0, int maxWidth = 0, float displaySeconds = 0)
+    public void DisplaySpeech(SpeechBubbleSettings[] speechBubbleSettings)
     {
-        if (maxWidth == 0)
-        {
-            maxWidth = _DefaultMaxWidth;
-        }
-        UITextComponent.text = "";
-        _Timer = 0;
-        SetTimeBetweenChars(speech, displaySeconds);
-        string modifiedString = GetModifiedString(speech, maxWidth - UITextComponent.fontSize);
-        _TimeToClose = timeToClose == 0 ? _DefaultTimeToClose : timeToClose;
+        _Bubbles = speechBubbleSettings;
+        ResetValues();
+        HorizontalGroup.padding = new RectOffset(20, 20, 20, 20);
+        SetTimeBetweenChars(speechBubbleSettings[0]);
+        string modifiedString = GetModifiedString(speechBubbleSettings[0].Text, speechBubbleSettings[0].MaxWidth - UITextComponent.fontSize);
+        _TimeToClose = speechBubbleSettings[0].TimeUntilClose;
         _TrueHeight = UITextComponent.fontSize * 1.5f + GetNumberLines(modifiedString) * (UITextComponent.fontSize + UITextComponent.lineSpacing * 2);
-        _TrueWidth = maxWidth;
+        _TrueWidth = speechBubbleSettings[0].MaxWidth;
         _FullText = modifiedString;
     }
 
-    private void SetTimeBetweenChars(string speech, float displaySeconds)
+    private void SetTimeBetweenChars(SpeechBubbleSettings speechBubbleSettings)
     {
-        if (displaySeconds == 0)
+        if (speechBubbleSettings.WriteTextTime == 0)
         {
-            _TimeBetweenChars = _DefaultTimeBetweenChars;
+            _TimeBetweenChars = speechBubbleSettings.TimeBetweenChars;
         } else
         {
-            _TimeBetweenChars = displaySeconds / speech.Length;
+            _TimeBetweenChars = speechBubbleSettings.WriteTextTime / speechBubbleSettings.Text.Length;
         }
     }
 
@@ -181,5 +218,17 @@ public class SpeechBubble : MonoBehaviour
     {
         string[] lines = speech.Split('\n');
         return lines.Length;
+    }
+
+    private void ResetValues()
+    {
+        _Timer = 0;
+        _TimeOpened = 0;
+        UITextComponent.text = "";
+        _FullText = "";
+        _MarkupText = new List<MarkupLetter>();
+        HorizontalGroup.padding = new RectOffset(0, 0, 0, 0);
+        _TrueHeight = 0;
+        _TrueWidth = 0;
     }
 }
