@@ -69,8 +69,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            _CurrentZDepth = Mathf.Lerp(transform.position.z, _DesiredZDepth, 0.1f);
-            transform.position = new Vector3(transform.position.x, transform.position.y, _CurrentZDepth);
+            float zDirection = _DesiredZDepth - _CurrentZDepth;
+            zDirection /= Mathf.Abs(zDirection);
+            
+            Controller.SimpleMove(new Vector3(0f, 0f, zDirection * Speed));
+            _CurrentZDepth = transform.position.z;
 
             if (Mathf.Abs(_CurrentZDepth - _DesiredZDepth) <= 0.1f)
             {
@@ -87,12 +90,13 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void ClickInteraction()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0))
         {
-            Vector2 mouseRay = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D mouseHit = Physics2D.Raycast(mouseRay, Vector2.zero);
+            Ray mousRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit mouseHit;
+            Physics.Raycast(mousRay, out mouseHit);
 
-            if (mouseHit)
+            if (mouseHit.collider != null)
             {
                 if (mouseHit.transform.tag == INTERATABLEOBJECTTAG)
                 {

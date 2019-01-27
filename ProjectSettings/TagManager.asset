@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InteractableObject
   - GameChangeInformation
+  - ImageClue
   layers:
   - Default
   - TransparentFX
