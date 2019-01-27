@@ -63,16 +63,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PPV: {fileID: 4742919709701804034}
   _Levels:
-  - LDMax: 50
-    LDMin: -50
+  - LDMax: 30
+    LDMin: -30
     VIGValue: 1
     CGSatValue: -100
-  - LDMax: 25
-    LDMin: -25
+  - LDMax: 20
+    LDMin: -20
     VIGValue: 0.5
     CGSatValue: -50
-  - LDMax: 12
-    LDMin: -12
+  - LDMax: 10
+    LDMin: -10
     VIGValue: 0.25
     CGSatValue: -25
   - LDMax: 0
