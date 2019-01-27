@@ -1,16 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class FridgeGameController : MonoBehaviour
 {
     public List<MagnetSlot> SlotsInOrder;
+    public float TimeAllowedToFinish;
+    public TextMeshPro TimerText;
     
     private MagnetSlot _SelectedSlot;
     private MoveableMagnet _SelectedMagnet;
     
     private const string GAMECHANGEINFORMATIONTAG = "GameChangeInformation";
     private GameChangeInformation _GameChangeInfo;
+
+    private float Timer;
+    private bool _HasLost = false;
 
     void Start()
     {
@@ -26,10 +32,27 @@ public class FridgeGameController : MonoBehaviour
 
         _SelectedSlot = null;
         _SelectedMagnet = null;
+        Timer = TimeAllowedToFinish;
+        _HasLost = false;
     }
 
     void Update()
     {
+        if (_HasLost == false)
+        {
+            Timer -= Time.deltaTime;
+            TimerText.text = string.Format("{0:0.0}", Timer);
+
+            if (Timer <= 0)
+            {
+                _GameChangeInfo.ChangeToMainGame(false, "fridge");
+                _HasLost = true;
+
+                Timer = 0f;
+                TimerText.text = string.Format("{0:0.0}", Timer);
+            }
+        }
+        
         if (Input.GetMouseButtonUp(0))
         {
             Ray mousRay = Camera.main.ScreenPointToRay(Input.mousePosition);
