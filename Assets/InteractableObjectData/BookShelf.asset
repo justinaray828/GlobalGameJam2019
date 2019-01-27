@@ -17,3 +17,4 @@ MonoBehaviour:
   objectName: Object Name
   outputText: []
   clue: {fileID: 3118575937864854534, guid: 84e322e2ae6f0d54db61368982187a52, type: 3}
+  clueType: 6

@@ -16,9 +16,15 @@ MonoBehaviour:
   miniGameType: 0
   objectName: Potted Plant
   outputText:
-  - Text: I'll water that tomorrow.
+  - Text: "You don\u2019t know what this is, but it disturbs you"
+    TimeUntilClose: 2
+    TimeBetweenChars: 0.03
+    WriteTextTime: 0
+    MaxWidth: 400
+  - Text: "It\u2019s best not to touch this."
     TimeUntilClose: 2
     TimeBetweenChars: 0.03
     WriteTextTime: 0
     MaxWidth: 400
   clue: {fileID: 0}
+  clueType: 0

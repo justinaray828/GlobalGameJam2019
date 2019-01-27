@@ -152,16 +152,18 @@ public class InteractableObject : MonoBehaviour
                 settings2.Text = "Text 2";
                 break;
             case PictureType.Honeymoon:
-                settings1.Text = "Honeymoon pic text";
-                settings2.Text = "Text 2";
+                settings1.Text = "Maybe you’re going to the beach with mom and dad today?";
+                settings1.MaxWidth = 400;
+                settings2.Text = "….Where are they, anyway?";
                 break;
             case PictureType.Kid:
                 settings1.Text = "You haven’t spoken to your grandpa in…it must be *months* now.";
                 settings2.Text = "Is that it? Did you forget to call him for his birthday?";
                 break;
             case PictureType.Mountain:
-                settings1.Text = "Mountain pic text";
-                settings2.Text = "Text 2";
+                settings1.Text = "The painting says “Icy wintertime”";
+                settings2.Text = "It calls to mind lovely, blooming flowers, and a woman calling out in the storm.";
+                settings2.MaxWidth = 500;
                 break;
             case PictureType.Snow:
                 settings1.Text = "Snow pic text";

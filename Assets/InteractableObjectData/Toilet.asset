@@ -16,9 +16,15 @@ MonoBehaviour:
   miniGameType: 0
   objectName: Toilet
   outputText:
-  - Text: It's a toilet.
+  - Text: Number one or number two?
     TimeUntilClose: 2
     TimeBetweenChars: 0
     WriteTextTime: 2
-    MaxWidth: 200
+    MaxWidth: 300
+  - Text: "Never mind, there\u2019s no time for that now."
+    TimeUntilClose: 2
+    TimeBetweenChars: 0
+    WriteTextTime: 2
+    MaxWidth: 400
   clue: {fileID: 0}
+  clueType: 0

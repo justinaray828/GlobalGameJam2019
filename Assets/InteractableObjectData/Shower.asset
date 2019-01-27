@@ -16,9 +16,10 @@ MonoBehaviour:
   miniGameType: 0
   objectName: Shower
   outputText:
-  - Text: I don't need a shower right now.
+  - Text: You don't need a shower right now.
     TimeUntilClose: 1
     TimeBetweenChars: 0.03
     WriteTextTime: 0
     MaxWidth: 300
   clue: {fileID: 0}
+  clueType: 0

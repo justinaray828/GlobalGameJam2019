@@ -16,14 +16,15 @@ MonoBehaviour:
   miniGameType: 0
   objectName: Mirror
   outputText:
-  - Text: Who is that?
-    TimeUntilClose: 1
-    TimeBetweenChars: 0
-    WriteTextTime: 2
-    MaxWidth: 300
-  - Text: Oh, it's me...
+  - Text: 'A life-sized painting of a sad old man hangs in the bathroom. '
     TimeUntilClose: 2
-    TimeBetweenChars: 0
-    WriteTextTime: 3
+    TimeBetweenChars: 0.03
+    WriteTextTime: 0
+    MaxWidth: 500
+  - Text: Modern art is weird.
+    TimeUntilClose: 2
+    TimeBetweenChars: 0.03
+    WriteTextTime: 0
     MaxWidth: 300
   clue: {fileID: 0}
+  clueType: 0

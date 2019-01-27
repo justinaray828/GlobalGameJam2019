@@ -16,14 +16,20 @@ MonoBehaviour:
   miniGameType: 0
   objectName: Washer Dryer
   outputText:
-  - Text: Have I washed my clothes lately?
+  - Text: "Oh! That\u2019s it\u2014it must be Laundry day. "
     TimeUntilClose: 2
     TimeBetweenChars: 0.03
     WriteTextTime: 0
     MaxWidth: 400
-  - Text: Is this my house?
+  - Text: 'It would be nice if someone was around to help with the chores. '
     TimeUntilClose: 2
     TimeBetweenChars: 0.03
     WriteTextTime: 0
-    MaxWidth: 400
+    MaxWidth: 500
+  - Text: "Maybe someday, when you\u2019re married\u2026"
+    TimeUntilClose: 2
+    TimeBetweenChars: 0.03
+    WriteTextTime: 0
+    MaxWidth: 300
   clue: {fileID: 0}
+  clueType: 0
