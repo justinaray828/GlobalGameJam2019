@@ -35,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
         
         Controller.SimpleMove(new Vector3(horizontal * Speed, 0f, vertical * Speed));
 
+        Model.transform.forward = Controller.velocity.normalized;
+        Model.transform.rotation = Quaternion.Euler(new Vector3(0f, Model.transform.rotation.eulerAngles.y, Model.transform.rotation.eulerAngles.z));
+
         if (horizontal > 0f || horizontal < 0f || vertical < 0f || vertical > 0f)
         {
             if (!iswalking)
