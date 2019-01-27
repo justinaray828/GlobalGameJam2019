@@ -15,6 +15,8 @@ public class GameChangeInformation : MonoBehaviour
     [Header("Flower Game")]
     public GameObject FlowerGame;
 
+    public SpeechBubble speechbub;
+
     private void Start()
     {
         MainGame.SetActive(true);
@@ -33,10 +35,13 @@ public class GameChangeInformation : MonoBehaviour
         if (pass)
         {
             FindObjectOfType<AudioManager>().ToHomeMusicOnSuccess();
+            Debug.Log("reached success");
+            //TODO: insert flavor text for both success and failure.
         }
         else
         {
             FindObjectOfType<AudioManager>().ToHomeMusicOnFailure();
+            Debug.Log("Reached Fail State");
         }
     }
 
