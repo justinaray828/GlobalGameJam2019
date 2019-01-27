@@ -18,6 +18,9 @@ public class GameChangeInformation : MonoBehaviour
     public SpeechBubble speechbub;
     public GameObject EndGame;
     public GameObject DiningRoomLight;
+    public GameObject Forget;
+    public GameObject Remember;
+    public GameObject PurpleRose;
 
     private bool danceSolved = false;
     private bool fridgeSolved = false;
@@ -137,6 +140,9 @@ public class GameChangeInformation : MonoBehaviour
         {
             EndGame.SetActive(true);
             DiningRoomLight.SetActive(false);
+            Forget.SetActive(false);
+            Remember.SetActive(true);
+            PurpleRose.SetActive(true);
         }
     }
 

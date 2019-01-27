@@ -1924,6 +1924,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 260b514cbda7e44f6ad929d4c2c7f3c8, type: 3}
+--- !u!1 &463096809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4729726508551957052, guid: 260b514cbda7e44f6ad929d4c2c7f3c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 463096808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &463096810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7467724202227520173, guid: 260b514cbda7e44f6ad929d4c2c7f3c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 463096808}
+  m_PrefabAsset: {fileID: 0}
 --- !u!84 &480537013
 RenderTexture:
   m_ObjectHideFlags: 0
@@ -2064,7 +2076,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 463096808}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1273731869
+--- !u!64 &1273731872
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2096,6 +2108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b6b0711dd46548b28ce03f65c100739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1371673238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5534910323247121994, guid: 260b514cbda7e44f6ad929d4c2c7f3c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 463096808}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1378475264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4779893144246707392, guid: 260b514cbda7e44f6ad929d4c2c7f3c8,
@@ -2209,6 +2227,21 @@ PrefabInstance:
       propertyPath: DiningRoomLight
       value: 
       objectReference: {fileID: 2074975023}
+    - target: {fileID: 7784321725940351079, guid: 496a18eb369359a44bf5d02f545a8695,
+        type: 3}
+      propertyPath: Remember
+      value: 
+      objectReference: {fileID: 463096810}
+    - target: {fileID: 7784321725940351079, guid: 496a18eb369359a44bf5d02f545a8695,
+        type: 3}
+      propertyPath: Forget
+      value: 
+      objectReference: {fileID: 1371673238}
+    - target: {fileID: 7784321725940351079, guid: 496a18eb369359a44bf5d02f545a8695,
+        type: 3}
+      propertyPath: PurpleRose
+      value: 
+      objectReference: {fileID: 463096809}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496a18eb369359a44bf5d02f545a8695, type: 3}
 --- !u!114 &1594588433 stripped
