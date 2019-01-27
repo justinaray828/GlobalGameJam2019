@@ -48,6 +48,28 @@ public class SpeechBubble : MonoBehaviour
     void Start()
     {
         Instance = this;
+        InitialScript();
+    }
+
+    private void InitialScript()
+    {  
+        SpeechBubbleSettings text1 = new SpeechBubbleSettings();
+        SpeechBubbleSettings text2 = new SpeechBubbleSettings();
+        SpeechBubbleSettings text3 = new SpeechBubbleSettings();
+        SpeechBubbleSettings text4 = new SpeechBubbleSettings();
+
+        text1.Text = "Something's... not right.";
+        text2.Text = "Today is important for some reason, but you can’t quite place it.";
+        text3.Text = "Where’s that nice lady who remembers things for you?";
+        text4.Text = "She would know what’s going on.";
+
+        text1.MaxWidth = 300;
+        text2.MaxWidth = 500;
+        text3.MaxWidth = 400;
+        text4.MaxWidth = 300;
+
+        SpeechBubbleSettings[] settingsArray = {text1, text2, text3, text4};
+        DisplaySpeech(settingsArray);
     }
 
     // Update is called once per frame

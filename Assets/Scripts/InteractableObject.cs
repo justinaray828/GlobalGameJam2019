@@ -127,37 +127,50 @@ public class InteractableObject : MonoBehaviour
 
     private void ImageCloseSpeech(CloseImageInput imageClose)
     {
-        SpeechBubbleSettings settings = new SpeechBubbleSettings();
-        settings.MaxWidth = 300;
-        settings.TimeUntilClose = 3;
-        settings.TimeBetweenChars = 0.03f;
+        SpeechBubbleSettings settings1 = new SpeechBubbleSettings();
+        settings1.MaxWidth = 300;
+        settings1.TimeUntilClose = 3;
+        settings1.TimeBetweenChars = 0.03f;
+
+        SpeechBubbleSettings settings2 = new SpeechBubbleSettings();
+        settings2.MaxWidth = 300;
+        settings2.TimeUntilClose = 3;
+        settings2.TimeBetweenChars = 0.03f;
+
         switch(interactableObjectData.clueType)
         {
             case PictureType.Baby:
-                settings.Text = "Baby pic text";
+                settings1.Text = "Baby pic text";
+                settings2.Text = "Text 2";
                 break;
             case PictureType.Book:
-                settings.Text = "Book pic text";
+                settings1.Text = "Book pic text";
+                settings2.Text = "Text 2";
                 break;
             case PictureType.Dancing:
-                settings.Text = "Dancing pic text";
+                settings1.Text = "Dancing pic text";
+                settings2.Text = "Text 2";
                 break;
             case PictureType.Honeymoon:
-                settings.Text = "Honeymoon pic text";
+                settings1.Text = "Honeymoon pic text";
+                settings2.Text = "Text 2";
                 break;
             case PictureType.Kid:
-                settings.Text = "Kid pic text";
+                settings1.Text = "You haven’t spoken to your grandpa in…it must be *months* now.";
+                settings2.Text = "Is that it? Did you forget to call him for his birthday?";
                 break;
             case PictureType.Mountain:
-                settings.Text = "Mountain pic text";
+                settings1.Text = "Mountain pic text";
+                settings2.Text = "Text 2";
                 break;
             case PictureType.Snow:
-                settings.Text = "Snow pic text";
+                settings1.Text = "Snow pic text";
+                settings2.Text = "Text 2";
                 break;
             default: 
                 break;
         }
-        SpeechBubbleSettings[] settingsArray = {settings};
+        SpeechBubbleSettings[] settingsArray = {settings1, settings2};
         SpeechBubble.Instance.DisplaySpeech(settingsArray);
         imageClose.UnregisterOnClose(ImageCloseSpeech);
     }
