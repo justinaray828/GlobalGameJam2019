@@ -74,7 +74,7 @@ public class FlowerHandController : MonoBehaviour
         }
         else
         {
-            gameChangeInformation.ChangeToMainGame(false, "Flower");
+            gameChangeInformation.ChangeToMainGame(false, "flower");
         }
     }
 

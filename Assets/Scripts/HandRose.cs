@@ -26,6 +26,6 @@ public class HandRose : MonoBehaviour
 
     void WinState()
     {
-        gameChangeInformation.ChangeToMainGame(true, "Flower");
+        gameChangeInformation.ChangeToMainGame(true, "flower");
     }
 }
