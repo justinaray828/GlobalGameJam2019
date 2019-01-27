@@ -152,12 +152,13 @@ public class SpeechBubble : MonoBehaviour
     public void DisplaySpeech(SpeechBubbleSettings[] speechBubbleSettings)
     {
         _Bubbles = speechBubbleSettings;
+        UITextComponent.font.RequestCharactersInTexture(speechBubbleSettings[0].Text, UITextComponent.fontSize, UITextComponent.fontStyle);
         ResetValues();
         HorizontalGroup.padding = new RectOffset(20, 20, 20, 20);
         SetTimeBetweenChars(speechBubbleSettings[0]);
-        string modifiedString = GetModifiedString(speechBubbleSettings[0].Text, speechBubbleSettings[0].MaxWidth - UITextComponent.fontSize);
+        string modifiedString = GetModifiedString(speechBubbleSettings[0].Text, speechBubbleSettings[0].MaxWidth);
         _TimeToClose = speechBubbleSettings[0].TimeUntilClose;
-        _TrueHeight = UITextComponent.fontSize * 1.5f + GetNumberLines(modifiedString) * (UITextComponent.fontSize + UITextComponent.lineSpacing * 2);
+        _TrueHeight = UITextComponent.fontSize + GetNumberLines(modifiedString) * (UITextComponent.fontSize + UITextComponent.lineSpacing);
         _TrueWidth = speechBubbleSettings[0].MaxWidth;
         _FullText = modifiedString;
     }
