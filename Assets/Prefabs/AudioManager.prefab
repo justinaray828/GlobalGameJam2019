@@ -43,22 +43,115 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b6b0711dd46548b28ce03f65c100739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadespeed: 0.39
+  masterMixer: {fileID: 24100000, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+  scoreOnSnapshot: {fileID: 24500006, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+  scoreOffSnapshot: {fileID: 245069090567716380, guid: da32aadd074d6418ebf4ea6e95e3ca79,
+    type: 2}
+  scorefinalSnap: {fileID: 0}
+  transitionSpeed: 1
   sounds:
-  - name: win1
-    clip: {fileID: 8300000, guid: b691f1bb671b14cb6b0427ecc93198a9, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: score1
-    clip: {fileID: 8300000, guid: 062f34491a9464c20a25d7471dd2eb5a, type: 3}
+  - name: walk1
+    clip: {fileID: 8300000, guid: dd791313bad154642ba13f078edefb44, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
     volume: 1
     pitch: 1
     loop: 1
+    playonawake: 0
+    source: {fileID: 0}
+  - name: score1
+    clip: {fileID: 8300000, guid: 04340b9db9a1445fd9cb998a4206d9bc, type: 3}
+    output: {fileID: 243351066666764206, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playonawake: 0
     source: {fileID: 0}
   - name: score2
-    clip: {fileID: 8300000, guid: 7174284c89725444f90a869e67dffe18, type: 3}
+    clip: {fileID: 8300000, guid: b1b3291d4a2174a2996e2f9df306ba71, type: 3}
+    output: {fileID: 243669123733059996, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
     volume: 0
     pitch: 1
     loop: 1
+    playonawake: 0
+    source: {fileID: 0}
+  - name: score3
+    clip: {fileID: 8300000, guid: 790f6b908f883481f9d7188d43292d24, type: 3}
+    output: {fileID: 243907909833206636, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 0
+    pitch: 1
+    loop: 1
+    playonawake: 0
+    source: {fileID: 0}
+  - name: score4
+    clip: {fileID: 8300000, guid: 22e3811fdd5e24cc9b0232d2da648c15, type: 3}
+    output: {fileID: 243170021794718282, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 0
+    pitch: 1
+    loop: 1
+    playonawake: 0
+    source: {fileID: 0}
+  - name: puzzleDance
+    clip: {fileID: 8300000, guid: 25f914927e3a64339800ead3b99a8d64, type: 3}
+    output: {fileID: 243232393931649260, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 0
+    pitch: 1
+    loop: 1
+    playonawake: 0
+    source: {fileID: 0}
+  - name: puzzleFridge
+    clip: {fileID: 8300000, guid: b1b3291d4a2174a2996e2f9df306ba71, type: 3}
+    output: {fileID: 243232393931649260, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 0
+    pitch: 1
+    loop: 1
+    playonawake: 0
+    source: {fileID: 0}
+  - name: puzzleFlower
+    clip: {fileID: 8300000, guid: 22e3811fdd5e24cc9b0232d2da648c15, type: 3}
+    output: {fileID: 243232393931649260, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 0
+    pitch: 1
+    loop: 1
+    playonawake: 0
+    source: {fileID: 0}
+  - name: walk2
+    clip: {fileID: 8300000, guid: 2a1a414792406444d8af66e222ecc486, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playonawake: 0
+    source: {fileID: 0}
+  - name: walk3
+    clip: {fileID: 8300000, guid: b40fdfe6f8fc54e4d8c16b3590f3d385, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playonawake: 0
+    source: {fileID: 0}
+  - name: walk4
+    clip: {fileID: 8300000, guid: 63f21952d4b804f67b9bd06e73fcd2d3, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playonawake: 0
+    source: {fileID: 0}
+  - name: walk5
+    clip: {fileID: 8300000, guid: b6804ddb62cd24843a741cdca23a7f4e, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playonawake: 0
+    source: {fileID: 0}
+  - name: scorefinal
+    clip: {fileID: 8300000, guid: 547be157c3a4744dfbbd03c0c40f9298, type: 3}
+    output: {fileID: 24300002, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playonawake: 0
     source: {fileID: 0}
