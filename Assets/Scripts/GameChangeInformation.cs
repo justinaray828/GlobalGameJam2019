@@ -16,6 +16,8 @@ public class GameChangeInformation : MonoBehaviour
     public GameObject FlowerGame;
 
     public SpeechBubble speechbub;
+    public GameObject EndGame;
+    public GameObject DiningRoomLight;
 
     private bool danceSolved = false;
     private bool fridgeSolved = false;
@@ -72,8 +74,6 @@ public class GameChangeInformation : MonoBehaviour
         DancingGame.SetActive(false);
         MainGame.SetActive(true);
 
-
-
         if (pass)
         {
             if (puzzlename == "dance")
@@ -121,6 +121,14 @@ public class GameChangeInformation : MonoBehaviour
         }
         
         FadedToAndFromBlackManager.Instance.FadeFromBlack();
+
+        if (danceSolved == true &&
+            fridgeSolved == true &&
+            flowerSolved == true)
+        {
+            EndGame.SetActive(true);
+            DiningRoomLight.SetActive(false);
+        }
     }
 
     public void ChangeToDancingGame()
