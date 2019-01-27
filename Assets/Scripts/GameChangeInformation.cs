@@ -95,6 +95,11 @@ public class GameChangeInformation : MonoBehaviour
         }
         else
         {
+            string[] texts = ["That doesn't seem quite right...", "I can't seem to remember that correctly...", "There's something there... but that's not it..."];
+            settings.Text = texts[UnityEngine.Random.Range(1, 3)];
+            SpeechBubbleSettings[] settingsArray = { settings };
+            SpeechBubble.Instance.DisplaySpeech(settingsArray);
+
             FindObjectOfType<AudioManager>().ToHomeMusicOnFailure();
             Debug.Log("Reached Fail State");
         }
