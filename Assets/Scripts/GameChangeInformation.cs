@@ -87,8 +87,22 @@ public class GameChangeInformation : MonoBehaviour
                 if (danceSolved == false)
                 {
                     FindObjectOfType<AudioManager>().ToHomeMusicOnSuccess();
-                    settings.Text = "That was our wedding dance. It took me forever to learn it.";
-                    SpeechBubbleSettings[] settingsArray = { settings };
+                    settings.Text = "There was a girl next door who loved to dance.";
+                    settings.MaxWidth = 300;
+
+                    SpeechBubbleSettings speech2 = new SpeechBubbleSettings();
+                    SpeechBubbleSettings speech3 = new SpeechBubbleSettings();
+
+                    speech2.Text = "She had three left feet, but she sure did have fun.";
+                    speech3.Text = "Maybe you’ll see her again someday…";
+
+                    speech2.MaxWidth = 300;
+                    speech3.MaxWidth = 200;
+
+                    speech2.TimeBetweenChars = speech3.TimeBetweenChars = 0.03f;
+                    speech2.TimeUntilClose = speech3.TimeUntilClose = 2;
+
+                    SpeechBubbleSettings[] settingsArray = { settings, speech2, speech3 };
                     SpeechBubble.Instance.DisplaySpeech(settingsArray);
                 }
                 de.SetDistortionLevel(de.GetDistortionLevel() + 1);
@@ -99,6 +113,20 @@ public class GameChangeInformation : MonoBehaviour
             {
                 if (flowerSolved == false)
                 {
+                    settings.Text = "That’s it! It’s the remembering-lady’s birthday today.";
+                    settings.MaxWidth = 300;
+
+                    SpeechBubbleSettings speech2 = new SpeechBubbleSettings();
+
+                    speech2.Text = "She liked purple flowers too, just like the dancing girl…";
+
+                    speech2.MaxWidth = 300;
+
+                    speech2.TimeBetweenChars = 0.03f;
+                    speech2.TimeUntilClose = 2;
+
+                    SpeechBubbleSettings[] settingsArray = { settings, speech2 };
+                    SpeechBubble.Instance.DisplaySpeech(settingsArray);
                     FindObjectOfType<AudioManager>().ToHomeMusicOnSuccess();
                 }
                 de.SetDistortionLevel(de.GetDistortionLevel() + 1);
@@ -109,6 +137,23 @@ public class GameChangeInformation : MonoBehaviour
             {
                 if (fridgeSolved == false)
                 {
+                    settings.Text = "The dancing girl…";
+                    settings.MaxWidth = 200;
+
+                    SpeechBubbleSettings speech2 = new SpeechBubbleSettings();
+                    SpeechBubbleSettings speech3 = new SpeechBubbleSettings();
+
+                    speech2.Text = "You wrote a poem for her just like this once.";
+                    speech3.Text = "She always did love purple flowers.";
+
+                    speech2.MaxWidth = 300;
+                    speech3.MaxWidth = 200;
+
+                    speech2.TimeBetweenChars = speech3.TimeBetweenChars = 0.03f;
+                    speech2.TimeUntilClose = speech3.TimeUntilClose = 2;
+
+                    SpeechBubbleSettings[] settingsArray = { settings, speech2, speech3 };
+                    SpeechBubble.Instance.DisplaySpeech(settingsArray);
                     FindObjectOfType<AudioManager>().ToHomeMusicOnSuccess();
                 }
                 de.SetDistortionLevel(de.GetDistortionLevel() + 1);
@@ -117,19 +162,17 @@ public class GameChangeInformation : MonoBehaviour
             }
             //if(danceSolved && flowerSolved && fridgeSolved)
             //TODO:insert final game ending events
-            Debug.Log("reached success");
             //TODO: insert flavor text for both success and failure.
             FindObjectOfType<AudioManager>().ToHomeMusicOnFailure();
         }
         else
         {
-            string[] texts = new string[] { "That doesn't seem quite right...", "I can't seem to remember that correctly...", "There's something there... but that's not it..." };
+            string[] texts = new string[] { "The memory slips through your fingers and into air.", "No, that’s not it. The memory fails you.", "The moment passes. The memory fades." };
             settings.Text = texts[UnityEngine.Random.Range(1, 3)];
             SpeechBubbleSettings[] settingsArray = { settings };
             SpeechBubble.Instance.DisplaySpeech(settingsArray);
 
             FindObjectOfType<AudioManager>().ToHomeMusicOnFailure();
-            Debug.Log("Reached Fail State");
         }
         
         FadedToAndFromBlackManager.Instance.FadeFromBlack();
@@ -182,14 +225,14 @@ public class GameChangeInformation : MonoBehaviour
         else
         {
             if (!danceSolved && !fridgeSolved)
-                settings.Text = "I want to return to the fridge and radio before I mess with that";
+                settings.Text = "You want to return to the fridge and radio before you mess with that";
             else if (!danceSolved)
             {
-                settings.Text = "I want to return to the radio before I mess with this";
+                settings.Text = "You want to return to the radio before you mess with this";
             }
             else
             {
-                settings.Text = "I want to return to the fridge before I mess with this";
+                settings.Text = "You want to return to the fridge before you mess with this";
             }
             SpeechBubbleSettings[] settingsArray = { settings };
             SpeechBubble.Instance.DisplaySpeech(settingsArray);
