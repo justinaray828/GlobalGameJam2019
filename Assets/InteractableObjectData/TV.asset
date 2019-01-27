@@ -10,20 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57218d00571437b488a3cb3f1d4600db, type: 3}
-  m_Name: WasherDryer
+  m_Name: TV
   m_EditorClassIdentifier: 
   interactableObjectType: 0
   miniGameType: 0
-  objectName: Washer Dryer
+  objectName: TV
   outputText:
-  - Text: Have I washed my clothes lately?
-    TimeUntilClose: 2
-    TimeBetweenChars: 0.03
-    WriteTextTime: 0
-    MaxWidth: 400
-  - Text: Is this my house?
-    TimeUntilClose: 2
-    TimeBetweenChars: 0.03
-    WriteTextTime: 0
-    MaxWidth: 400
+  - Text: I miss Mr. Rogers.
+    TimeUntilClose: 3
+    TimeBetweenChars: 0
+    WriteTextTime: 2
+    MaxWidth: 300
   clue: {fileID: 0}

@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57218d00571437b488a3cb3f1d4600db, type: 3}
-  m_Name: WasherDryer
+  m_Name: LivingRoomWindow
   m_EditorClassIdentifier: 
   interactableObjectType: 0
   miniGameType: 0
-  objectName: Washer Dryer
+  objectName: Living Room Window
   outputText:
-  - Text: Have I washed my clothes lately?
+  - Text: It's a beautiful day outside.
     TimeUntilClose: 2
     TimeBetweenChars: 0.03
     WriteTextTime: 0
-    MaxWidth: 400
-  - Text: Is this my house?
+    MaxWidth: 300
+  - Text: I love listening to the birds.
     TimeUntilClose: 2
     TimeBetweenChars: 0.03
     WriteTextTime: 0
-    MaxWidth: 400
+    MaxWidth: 300
   clue: {fileID: 0}
