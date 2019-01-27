@@ -46,6 +46,11 @@ public class GameChangeInformation : MonoBehaviour
         DancingGame.SetActive(false);
         MainGame.SetActive(true);
 
+        SpeechBubbleSettings settings = new SpeechBubbleSettings();
+        settings.MaxWidth = 300;
+        settings.TimeBetweenChars = 0.03f;
+        settings.TimeUntilClose = 3;
+
         if (pass)
         {
             if (puzzlename == "dance") 
@@ -53,6 +58,9 @@ public class GameChangeInformation : MonoBehaviour
                 if (danceSolved == false)
                 {
                     FindObjectOfType<AudioManager>().ToHomeMusicOnSuccess();
+                    settings.Text = "That was our wedding dance. It took me forever to learn it.";
+                    SpeechBubbleSettings[] settingsArray = {settings};
+                    SpeechBubble.Instance.DisplaySpeech(settingsArray);
                 }
                 danceSolved = true;
                 }
@@ -90,6 +98,8 @@ public class GameChangeInformation : MonoBehaviour
         MainGame.SetActive(false);
         FindObjectOfType<AudioManager>().ToDanceMusic();
         DancingGame.SetActive(true);
+        
+        FadedToAndFromBlackManager.Instance.FadeFromBlack();
     }
 
     public void ChangeToFridgeGame()
@@ -97,6 +107,8 @@ public class GameChangeInformation : MonoBehaviour
         MainGame.SetActive(false);
         FindObjectOfType<AudioManager>().ToFridgeMusic();
         FridgeGame.SetActive(true);
+        
+        FadedToAndFromBlackManager.Instance.FadeFromBlack();
     }
 
     public void ChangeToFlowerGame()
@@ -104,5 +116,7 @@ public class GameChangeInformation : MonoBehaviour
         MainGame.SetActive(false);
         FindObjectOfType<AudioManager>().ToFlowerMusic();
         FlowerGame.SetActive(true);
+        
+        FadedToAndFromBlackManager.Instance.FadeFromBlack();
     }
 }
