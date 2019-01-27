@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57218d00571437b488a3cb3f1d4600db, type: 3}
+  m_Name: LivingRoomWindow
+  m_EditorClassIdentifier: 
+  interactableObjectType: 0
+  miniGameType: 0
+  objectName: Living Room Window
+  outputText:
+  - Text: It's a beautiful day outside.
+    TimeUntilClose: 2
+    TimeBetweenChars: 0.03
+    WriteTextTime: 0
+    MaxWidth: 300
+  - Text: I love listening to the birds.
+    TimeUntilClose: 2
+    TimeBetweenChars: 0.03
+    WriteTextTime: 0
+    MaxWidth: 300
+  clue: {fileID: 0}
