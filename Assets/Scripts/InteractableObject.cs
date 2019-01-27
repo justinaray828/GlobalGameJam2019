@@ -32,9 +32,7 @@ public class InteractableObject : MonoBehaviour
 
     private void Update()
     {
-        Vector3 playerPosition = PlayerMovement.Instance.transform.position;
-
-        if (Vector3.Distance(playerPosition, Collider.bounds.center) <= 10f)
+        if (PlayerIsNear())
         {
             if (ParticleSys.isPlaying == false)
             {
@@ -55,6 +53,11 @@ public class InteractableObject : MonoBehaviour
     /// </summary>
     public void Interact()
     {
+        if (PlayerIsNear() == false)
+        {
+            return;
+        }
+
         switch(interactableObjectData.interactableObjectType)
         {
             case InteractableObjectData.InteractableObjectType.Text:
@@ -67,6 +70,12 @@ public class InteractableObject : MonoBehaviour
                 MiniGameInteraction();
                 break;
         }
+    }
+
+    private bool PlayerIsNear()
+    {
+        Vector3 playerPosition = PlayerMovement.Instance.transform.position;
+        return Vector3.Distance(playerPosition, Collider.bounds.center) <= 10f;
     }
 
     private void TextInteraction()
