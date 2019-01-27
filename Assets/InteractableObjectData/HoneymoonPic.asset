@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57218d00571437b488a3cb3f1d4600db, type: 3}
   m_Name: HoneymoonPic
   m_EditorClassIdentifier: 
-  interactableObjectType: 0
+  interactableObjectType: 1
   miniGameType: 0
   objectName: Object Name
   outputText: []
-  clue: {fileID: 0}
+  clue: {fileID: 1632492362783905099, guid: 28a89f96644c00e488379ae5fbb62ef7, type: 3}
+  clueType: 1
