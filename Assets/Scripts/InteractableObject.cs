@@ -15,6 +15,7 @@ public class InteractableObject : MonoBehaviour
 
     public Transform ParticleSystemAttachmentPoint;
     public GameObject ParticleSystemPrefab;
+    public AudioManager am;
     private ParticleSystem ParticleSys;
     private MeshCollider Collider;
 
@@ -29,6 +30,7 @@ public class InteractableObject : MonoBehaviour
         particleSystem.transform.parent = ParticleSystemAttachmentPoint;
         particleSystem.transform.localPosition = Vector3.zero;
         particleSystem.transform.localRotation = Quaternion.identity;
+        am = FindObjectOfType<AudioManager>();
 
         Collider = GetComponent<MeshCollider>();
 
@@ -90,9 +92,13 @@ public class InteractableObject : MonoBehaviour
         switch(interactableObjectData.interactableObjectType)
         {
             case InteractableObjectData.InteractableObjectType.Text:
+                am.Play("bubble1");
                 TextInteraction();
                 break;
             case InteractableObjectData.InteractableObjectType.Image:
+                Debug.Log(interactableObjectData.name);
+                if (interactableObjectData.name == "BookShelf")
+                    am.Play("paper1");
                 ImageInteraction();
                 break;
             case InteractableObjectData.InteractableObjectType.MiniGame:
