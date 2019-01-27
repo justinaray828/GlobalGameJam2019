@@ -61,7 +61,7 @@ MonoBehaviour:
     playonawake: 0
     source: {fileID: 0}
   - name: score1
-    clip: {fileID: 8300000, guid: 04340b9db9a1445fd9cb998a4206d9bc, type: 3}
+    clip: {fileID: 8300000, guid: b1b3291d4a2174a2996e2f9df306ba71, type: 3}
     output: {fileID: 243351066666764206, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
     volume: 1
     pitch: 1
@@ -69,7 +69,7 @@ MonoBehaviour:
     playonawake: 0
     source: {fileID: 0}
   - name: score2
-    clip: {fileID: 8300000, guid: b1b3291d4a2174a2996e2f9df306ba71, type: 3}
+    clip: {fileID: 8300000, guid: 04340b9db9a1445fd9cb998a4206d9bc, type: 3}
     output: {fileID: 243669123733059996, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
     volume: 0
     pitch: 1
