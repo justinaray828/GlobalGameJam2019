@@ -42,8 +42,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             Ray mousRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            int layersToIgnore = 1 << 9;
+            layersToIgnore = ~layersToIgnore;
+            
             RaycastHit mouseHit;
-            Physics.Raycast(mousRay, out mouseHit, 1 << 9);
+            Physics.Raycast(mousRay, out mouseHit, float.MaxValue, layersToIgnore);
 
             if (mouseHit.collider != null)
             {

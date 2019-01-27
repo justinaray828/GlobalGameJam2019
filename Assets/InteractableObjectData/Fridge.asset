@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57218d00571437b488a3cb3f1d4600db, type: 3}
-  m_Name: PictureFrame
+  m_Name: Fridge
   m_EditorClassIdentifier: 
-  interactableObjectType: 0
-  miniGameType: 0
+  interactableObjectType: 2
+  miniGameType: 2
   objectName: Object Name
   outputText: []
   clue: {fileID: 0}
