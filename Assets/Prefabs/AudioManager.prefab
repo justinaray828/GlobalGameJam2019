@@ -156,3 +156,83 @@ MonoBehaviour:
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+  - name: cry
+    clip: {fileID: 8300000, guid: ab4e82b15b1664beca24a518eecb7ba7, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 0.805
+    pitch: 1
+    loop: 0
+    playonawake: 0
+    source: {fileID: 0}
+  - name: paper1
+    clip: {fileID: 8300000, guid: 7ef3297aad2e04a8cac02ab0b671e106, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 0.51
+    pitch: 1
+    loop: 0
+    playonawake: 0
+    source: {fileID: 0}
+  - name: paper2
+    clip: {fileID: 8300000, guid: 3d64a5e3815a7455eb28a211e8599cfe, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 0.497
+    pitch: 1
+    loop: 0
+    playonawake: 0
+    source: {fileID: 0}
+  - name: paper3
+    clip: {fileID: 8300000, guid: 393ce4fab29d64da5a2a14cef4506e70, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 0.464
+    pitch: 1
+    loop: 0
+    playonawake: 0
+    source: {fileID: 0}
+  - name: static1
+    clip: {fileID: 8300000, guid: c437f3db25f9043dca0946c220a5ea84, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playonawake: 0
+    source: {fileID: 0}
+  - name: static2
+    clip: {fileID: 8300000, guid: c2565ceedca2044349340b741c91ac0d, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    playonawake: 0
+    source: {fileID: 0}
+  - name: bubble1
+    clip: {fileID: 8300000, guid: 06faeaed9312e445a91f052b18e5b575, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playonawake: 0
+    source: {fileID: 0}
+  - name: bubble2
+    clip: {fileID: 8300000, guid: f02e3646d37364e7c9248cf8df75abad, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playonawake: 0
+    source: {fileID: 0}
+  - name: bubble3
+    clip: {fileID: 8300000, guid: 0a7fcc8c0797245fb842fde16d9dea81, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playonawake: 0
+    source: {fileID: 0}
+  - name: win1
+    clip: {fileID: 8300000, guid: b691f1bb671b14cb6b0427ecc93198a9, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playonawake: 0
+    source: {fileID: 0}
