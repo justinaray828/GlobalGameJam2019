@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -8,6 +8,8 @@ public class FridgeGameController : MonoBehaviour
     public List<MagnetSlot> SlotsInOrder;
     public float TimeAllowedToFinish;
     public TextMeshPro TimerText;
+
+    public AudioManager am;
     
     private MagnetSlot _SelectedSlot;
     private MoveableMagnet _SelectedMagnet;
@@ -21,6 +23,7 @@ public class FridgeGameController : MonoBehaviour
     void Start()
     {
         _GameChangeInfo = GameObject.FindWithTag(GAMECHANGEINFORMATIONTAG).GetComponent<GameChangeInformation>();
+        am = FindObjectOfType<AudioManager>();
     }
 
     private void OnEnable()
@@ -101,6 +104,8 @@ public class FridgeGameController : MonoBehaviour
                         _SelectedMagnet.SetSelectState(false);
                         _SelectedMagnet = null;
 
+                        am.Play("magnet");
+
                         if (_SelectedSlot != null)
                         {
                             _SelectedSlot.SetSelectState(false);
@@ -112,7 +117,8 @@ public class FridgeGameController : MonoBehaviour
                     else if (moving == true)
                     {
                         magnet.SetSlotHoldingMagnet(_SelectedSlot);
-                        
+                        am.Play("magnet");
+
                         _SelectedSlot.SetSelectState(false);
                         _SelectedSlot = null;
                         
@@ -136,6 +142,7 @@ public class FridgeGameController : MonoBehaviour
                         magnet.SetSelectState(true);
                         _SelectedMagnet = magnet;
                     }
+
                 }
                 else if (slot != null)
                 {
@@ -173,7 +180,9 @@ public class FridgeGameController : MonoBehaviour
 
                         _SelectedSlot.SetSelectState(false);
                         _SelectedSlot = null;
-                        
+
+                        am.Play("magnet");
+
                         if (_SelectedMagnet != null)
                         {
                             _SelectedMagnet.SetSelectState(false);
@@ -187,6 +196,8 @@ public class FridgeGameController : MonoBehaviour
                         slot.SetMagnetInSlot(_SelectedMagnet);
                         _SelectedMagnet.SetSelectState(false);
                         _SelectedMagnet = null;
+
+                        am.Play("magnet");
 
                         if (_SelectedSlot != null)
                         {

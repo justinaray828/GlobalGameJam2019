@@ -68,6 +68,9 @@ public class SpeechBubble : MonoBehaviour
         text3.MaxWidth = 400;
         text4.MaxWidth = 300;
 
+        text3.TimeUntilClose = 1;
+        text4.TimeUntilClose = 1;
+
         SpeechBubbleSettings[] settingsArray = {text1, text2, text3, text4};
         DisplaySpeech(settingsArray);
     }

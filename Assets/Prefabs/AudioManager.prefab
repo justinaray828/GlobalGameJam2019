@@ -50,6 +50,8 @@ MonoBehaviour:
     type: 2}
   scorefinalSnap: {fileID: 245585927406306378, guid: da32aadd074d6418ebf4ea6e95e3ca79,
     type: 2}
+  fridgeSnap: {fileID: 245722344298284978, guid: da32aadd074d6418ebf4ea6e95e3ca79,
+    type: 2}
   transitionSpeed: 1
   sounds:
   - name: walk1
@@ -60,6 +62,7 @@ MonoBehaviour:
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: score1
     clip: {fileID: 8300000, guid: b1b3291d4a2174a2996e2f9df306ba71, type: 3}
     output: {fileID: 243351066666764206, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -68,6 +71,7 @@ MonoBehaviour:
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: score2
     clip: {fileID: 8300000, guid: 04340b9db9a1445fd9cb998a4206d9bc, type: 3}
     output: {fileID: 243669123733059996, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -76,6 +80,7 @@ MonoBehaviour:
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: score3
     clip: {fileID: 8300000, guid: 790f6b908f883481f9d7188d43292d24, type: 3}
     output: {fileID: 243907909833206636, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -84,6 +89,7 @@ MonoBehaviour:
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: score4
     clip: {fileID: 8300000, guid: 22e3811fdd5e24cc9b0232d2da648c15, type: 3}
     output: {fileID: 243170021794718282, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -92,30 +98,34 @@ MonoBehaviour:
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: puzzleDance
     clip: {fileID: 8300000, guid: 25f914927e3a64339800ead3b99a8d64, type: 3}
     output: {fileID: 243806412801437048, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
-    volume: 0
+    volume: 0.464
     pitch: 1
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: puzzleFridge
     clip: {fileID: 8300000, guid: 7174284c89725444f90a869e67dffe18, type: 3}
     output: {fileID: 243806412801437048, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
-    volume: 0
+    volume: 0.471
     pitch: 1
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: puzzleFlower
-    clip: {fileID: 8300000, guid: 7174284c89725444f90a869e67dffe18, type: 3}
+    clip: {fileID: 8300000, guid: b710203c3b0bc47688242ec58cba54be, type: 3}
     output: {fileID: 243806412801437048, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
-    volume: 0
+    volume: 0.504
     pitch: 1
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: walk2
     clip: {fileID: 8300000, guid: 2a1a414792406444d8af66e222ecc486, type: 3}
     output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -124,6 +134,7 @@ MonoBehaviour:
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: walk3
     clip: {fileID: 8300000, guid: b40fdfe6f8fc54e4d8c16b3590f3d385, type: 3}
     output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -132,6 +143,7 @@ MonoBehaviour:
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: walk4
     clip: {fileID: 8300000, guid: 63f21952d4b804f67b9bd06e73fcd2d3, type: 3}
     output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -140,6 +152,7 @@ MonoBehaviour:
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: walk5
     clip: {fileID: 8300000, guid: b6804ddb62cd24843a741cdca23a7f4e, type: 3}
     output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -148,6 +161,7 @@ MonoBehaviour:
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: scorefinal
     clip: {fileID: 8300000, guid: 547be157c3a4744dfbbd03c0c40f9298, type: 3}
     output: {fileID: 243657745581759760, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -156,6 +170,7 @@ MonoBehaviour:
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: cry
     clip: {fileID: 8300000, guid: ab4e82b15b1664beca24a518eecb7ba7, type: 3}
     output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -164,14 +179,16 @@ MonoBehaviour:
     loop: 0
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: paper1
     clip: {fileID: 8300000, guid: 7ef3297aad2e04a8cac02ab0b671e106, type: 3}
     output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
-    volume: 0.51
+    volume: 0.086
     pitch: 1
     loop: 0
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: paper2
     clip: {fileID: 8300000, guid: 3d64a5e3815a7455eb28a211e8599cfe, type: 3}
     output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -180,6 +197,7 @@ MonoBehaviour:
     loop: 0
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: paper3
     clip: {fileID: 8300000, guid: 393ce4fab29d64da5a2a14cef4506e70, type: 3}
     output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -188,6 +206,7 @@ MonoBehaviour:
     loop: 0
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: static1
     clip: {fileID: 8300000, guid: c437f3db25f9043dca0946c220a5ea84, type: 3}
     output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -196,6 +215,7 @@ MonoBehaviour:
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: static2
     clip: {fileID: 8300000, guid: c2565ceedca2044349340b741c91ac0d, type: 3}
     output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -204,6 +224,7 @@ MonoBehaviour:
     loop: 1
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: bubble1
     clip: {fileID: 8300000, guid: 06faeaed9312e445a91f052b18e5b575, type: 3}
     output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -212,6 +233,7 @@ MonoBehaviour:
     loop: 0
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: bubble2
     clip: {fileID: 8300000, guid: f02e3646d37364e7c9248cf8df75abad, type: 3}
     output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -220,6 +242,7 @@ MonoBehaviour:
     loop: 0
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: bubble3
     clip: {fileID: 8300000, guid: 0a7fcc8c0797245fb842fde16d9dea81, type: 3}
     output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -228,6 +251,7 @@ MonoBehaviour:
     loop: 0
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
   - name: win1
     clip: {fileID: 8300000, guid: b691f1bb671b14cb6b0427ecc93198a9, type: 3}
     output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
@@ -236,3 +260,13 @@ MonoBehaviour:
     loop: 0
     playonawake: 0
     source: {fileID: 0}
+    originalVolume: 0
+  - name: magnet
+    clip: {fileID: 8300000, guid: 954b7411d79384906b325be802ba1d7e, type: 3}
+    output: {fileID: 243186231561381374, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playonawake: 0
+    source: {fileID: 0}
+    originalVolume: 0

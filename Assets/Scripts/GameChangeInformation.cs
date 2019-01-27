@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class GameChangeInformation : MonoBehaviour
@@ -21,17 +21,26 @@ public class GameChangeInformation : MonoBehaviour
     private bool fridgeSolved = false;
     private bool flowerSolved = false;
 
+    SpeechBubbleSettings settings = new SpeechBubbleSettings();
+
+
     private void Start()
     {
         MainGame.SetActive(true);
         DancingGame.SetActive(false);
         FridgeGame.SetActive(false);
         FlowerGame.SetActive(false);
+
+        settings.MaxWidth = 300;
+        settings.TimeBetweenChars = 0.03f;
+        settings.TimeUntilClose = 3;
     }
 
     private bool _SavedPass;
     private string _SavedPuzzleName;
 
+
+    //TODO: set distortion level 
     /// <summary>
     /// Changes focus back to main game. Pass in boolean
     /// on whether puzzle was completed.
@@ -63,20 +72,17 @@ public class GameChangeInformation : MonoBehaviour
         DancingGame.SetActive(false);
         MainGame.SetActive(true);
 
-        SpeechBubbleSettings settings = new SpeechBubbleSettings();
-        settings.MaxWidth = 300;
-        settings.TimeBetweenChars = 0.03f;
-        settings.TimeUntilClose = 3;
+
 
         if (pass)
         {
-            if (puzzlename == "dance") 
+            if (puzzlename == "dance")
             {
                 if (danceSolved == false)
                 {
                     FindObjectOfType<AudioManager>().ToHomeMusicOnSuccess();
                     settings.Text = "That was our wedding dance. It took me forever to learn it.";
-                    SpeechBubbleSettings[] settingsArray = {settings};
+                    SpeechBubbleSettings[] settingsArray = { settings };
                     SpeechBubble.Instance.DisplaySpeech(settingsArray);
                 }
                 danceSolved = true;
@@ -105,6 +111,11 @@ public class GameChangeInformation : MonoBehaviour
         }
         else
         {
+            string[] texts = new string[] { "That doesn't seem quite right...", "I can't seem to remember that correctly...", "There's something there... but that's not it..." };
+            settings.Text = texts[UnityEngine.Random.Range(1, 3)];
+            SpeechBubbleSettings[] settingsArray = { settings };
+            SpeechBubble.Instance.DisplaySpeech(settingsArray);
+
             FindObjectOfType<AudioManager>().ToHomeMusicOnFailure();
             Debug.Log("Reached Fail State");
         }
@@ -117,7 +128,7 @@ public class GameChangeInformation : MonoBehaviour
         MainGame.SetActive(false);
         FindObjectOfType<AudioManager>().ToDanceMusic();
         DancingGame.SetActive(true);
-        
+
         FadedToAndFromBlackManager.Instance.FadeFromBlack();
     }
 
@@ -126,7 +137,7 @@ public class GameChangeInformation : MonoBehaviour
         MainGame.SetActive(false);
         FindObjectOfType<AudioManager>().ToFridgeMusic();
         FridgeGame.SetActive(true);
-        
+
         FadedToAndFromBlackManager.Instance.FadeFromBlack();
     }
 
@@ -135,7 +146,32 @@ public class GameChangeInformation : MonoBehaviour
         MainGame.SetActive(false);
         FindObjectOfType<AudioManager>().ToFlowerMusic();
         FlowerGame.SetActive(true);
-        
+
         FadedToAndFromBlackManager.Instance.FadeFromBlack();
+    }
+
+    public bool CheckIfFlowerAllowed() //could be done with out parameter
+    {
+        if (danceSolved && fridgeSolved)
+        {
+            return true;
+        }
+        else
+        {
+            if (!danceSolved && !fridgeSolved)
+                settings.Text = "I want to return to the fridge and radio before I mess with that";
+            else if (!danceSolved)
+            {
+                settings.Text = "I want to return to the radio before I mess with this";
+            }
+            else
+            {
+                settings.Text = "I want to return to the fridge before I mess with this";
+            }
+            SpeechBubbleSettings[] settingsArray = { settings };
+            SpeechBubble.Instance.DisplaySpeech(settingsArray);
+
+            return false;
+        }
     }
 }
