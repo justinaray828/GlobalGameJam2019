@@ -29,6 +29,9 @@ public class GameChangeInformation : MonoBehaviour
         FlowerGame.SetActive(false);
     }
 
+    private bool _SavedPass;
+    private string _SavedPuzzleName;
+
     /// <summary>
     /// Changes focus back to main game. Pass in boolean
     /// on whether puzzle was completed.
@@ -39,6 +42,20 @@ public class GameChangeInformation : MonoBehaviour
     /// <param name="puzzlename">Puzzlename.</param>
     public void ChangeToMainGame(bool pass, string puzzlename = "none")
     {
+        _SavedPass = pass;
+        _SavedPuzzleName = puzzlename;
+        
+        FadedToAndFromBlackManager.Instance.RegisterForFinishedFading(ChangeToMainGameAfterFade);
+        FadedToAndFromBlackManager.Instance.FadeToBlack();
+    }
+
+    private void ChangeToMainGameAfterFade()
+    {
+        FadedToAndFromBlackManager.Instance.UnregisterForFinishedFading(ChangeToMainGameAfterFade);
+        
+        bool pass = _SavedPass;
+        string puzzlename = _SavedPuzzleName;
+        
         if(puzzlename == "none")
             Debug.LogWarning("ChangeToMainGame called without 2nd parameter");
         FlowerGame.SetActive(false);
@@ -63,7 +80,7 @@ public class GameChangeInformation : MonoBehaviour
                     SpeechBubble.Instance.DisplaySpeech(settingsArray);
                 }
                 danceSolved = true;
-                }
+            }
             else if (puzzlename == "flower")
             {
                 if (flowerSolved == false)
@@ -81,7 +98,7 @@ public class GameChangeInformation : MonoBehaviour
                 fridgeSolved = true;
             }
             //if(danceSolved && flowerSolved && fridgeSolved)
-                //TODO:insert final game ending events
+            //TODO:insert final game ending events
             Debug.Log("reached success");
             //TODO: insert flavor text for both success and failure.
             FindObjectOfType<AudioManager>().ToHomeMusicOnFailure();
@@ -91,6 +108,8 @@ public class GameChangeInformation : MonoBehaviour
             FindObjectOfType<AudioManager>().ToHomeMusicOnFailure();
             Debug.Log("Reached Fail State");
         }
+        
+        FadedToAndFromBlackManager.Instance.FadeFromBlack();
     }
 
     public void ChangeToDancingGame()
