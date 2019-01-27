@@ -64,7 +64,7 @@ MonoBehaviour:
     source: {fileID: 0}
     originalVolume: 0
   - name: score1
-    clip: {fileID: 8300000, guid: b1b3291d4a2174a2996e2f9df306ba71, type: 3}
+    clip: {fileID: 8300000, guid: 1856bc325afc34508bf640ba8ed4d012, type: 3}
     output: {fileID: 243351066666764206, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
     volume: 1
     pitch: 1
@@ -73,7 +73,7 @@ MonoBehaviour:
     source: {fileID: 0}
     originalVolume: 0
   - name: score2
-    clip: {fileID: 8300000, guid: 04340b9db9a1445fd9cb998a4206d9bc, type: 3}
+    clip: {fileID: 8300000, guid: 058cc742f38a3495e9a26b30862d8f25, type: 3}
     output: {fileID: 243669123733059996, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
     volume: 0
     pitch: 1
@@ -82,7 +82,7 @@ MonoBehaviour:
     source: {fileID: 0}
     originalVolume: 0
   - name: score3
-    clip: {fileID: 8300000, guid: 790f6b908f883481f9d7188d43292d24, type: 3}
+    clip: {fileID: 8300000, guid: 16b6f5816955b4ba395c0dac9b752c81, type: 3}
     output: {fileID: 243907909833206636, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
     volume: 0
     pitch: 1
@@ -91,7 +91,7 @@ MonoBehaviour:
     source: {fileID: 0}
     originalVolume: 0
   - name: score4
-    clip: {fileID: 8300000, guid: 22e3811fdd5e24cc9b0232d2da648c15, type: 3}
+    clip: {fileID: 8300000, guid: 9f8be3174d21b4fe189966cf8bd73951, type: 3}
     output: {fileID: 243170021794718282, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
     volume: 0
     pitch: 1
@@ -163,7 +163,7 @@ MonoBehaviour:
     source: {fileID: 0}
     originalVolume: 0
   - name: scorefinal
-    clip: {fileID: 8300000, guid: 547be157c3a4744dfbbd03c0c40f9298, type: 3}
+    clip: {fileID: 8300000, guid: 9472690ae526b49f496186a04af13ce2, type: 3}
     output: {fileID: 243657745581759760, guid: da32aadd074d6418ebf4ea6e95e3ca79, type: 2}
     volume: 1
     pitch: 1
