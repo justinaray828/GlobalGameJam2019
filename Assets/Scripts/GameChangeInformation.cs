@@ -20,6 +20,7 @@ public class GameChangeInformation : MonoBehaviour
     private bool danceSolved = false;
     private bool fridgeSolved = false;
     private bool flowerSolved = false;
+    private DistortionEffects de;
 
     SpeechBubbleSettings settings = new SpeechBubbleSettings();
 
@@ -34,6 +35,8 @@ public class GameChangeInformation : MonoBehaviour
         settings.MaxWidth = 300;
         settings.TimeBetweenChars = 0.03f;
         settings.TimeUntilClose = 3;
+
+        de = FindObjectOfType<DistortionEffects>();
     }
 
     private bool _SavedPass;
@@ -80,6 +83,7 @@ public class GameChangeInformation : MonoBehaviour
             {
                 if (danceSolved == false)
                 {
+                    de.SetDistortionLevel(de.GetDistortionLevel() + 1);
                     FindObjectOfType<AudioManager>().ToHomeMusicOnSuccess();
                     settings.Text = "That was our wedding dance. It took me forever to learn it.";
                     SpeechBubbleSettings[] settingsArray = { settings };
@@ -91,6 +95,7 @@ public class GameChangeInformation : MonoBehaviour
             {
                 if (flowerSolved == false)
                 {
+                    de.SetDistortionLevel(de.GetDistortionLevel() + 1);
                     FindObjectOfType<AudioManager>().ToHomeMusicOnSuccess();
                 }
                 flowerSolved = true;
@@ -99,6 +104,7 @@ public class GameChangeInformation : MonoBehaviour
             {
                 if (fridgeSolved == false)
                 {
+                    de.SetDistortionLevel(de.GetDistortionLevel() + 1);
                     FindObjectOfType<AudioManager>().ToHomeMusicOnSuccess();
                 }
                 fridgeSolved = true;
