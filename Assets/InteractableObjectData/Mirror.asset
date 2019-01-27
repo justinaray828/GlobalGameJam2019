@@ -17,7 +17,7 @@ MonoBehaviour:
   objectName: Mirror
   outputText:
   - Text: 'A life-sized painting of a sad old man hangs in the bathroom. '
-    TimeUntilClose: 2
+    TimeUntilClose: 1
     TimeBetweenChars: 0.03
     WriteTextTime: 0
     MaxWidth: 500

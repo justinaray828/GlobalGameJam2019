@@ -16,14 +16,10 @@ MonoBehaviour:
   miniGameType: 0
   objectName: Sofa
   outputText:
-  - Text: I could go for a nap...
-    TimeUntilClose: 2
-    TimeBetweenChars: 0.03
-    WriteTextTime: 0
-    MaxWidth: 300
-  - Text: I just don't rest well these days.
+  - Text: There's no time for a nap right now.
     TimeUntilClose: 2
     TimeBetweenChars: 0.03
     WriteTextTime: 0
     MaxWidth: 400
   clue: {fileID: 0}
+  clueType: 0

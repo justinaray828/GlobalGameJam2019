@@ -15,6 +15,21 @@ MonoBehaviour:
   interactableObjectType: 0
   miniGameType: 0
   objectName: Object Name
-  outputText: []
+  outputText:
+  - Text: What a fancy pair of shoes!
+    TimeUntilClose: 2
+    TimeBetweenChars: 0.03
+    WriteTextTime: 0
+    MaxWidth: 300
+  - Text: You could really go dancing in these.
+    TimeUntilClose: 2
+    TimeBetweenChars: 0.03
+    WriteTextTime: 0
+    MaxWidth: 300
+  - Text: "You\u2019d be waltzing in no time! If only you knew how..."
+    TimeUntilClose: 2
+    TimeBetweenChars: 0.03
+    WriteTextTime: 0
+    MaxWidth: 400
   clue: {fileID: 0}
   clueType: 0

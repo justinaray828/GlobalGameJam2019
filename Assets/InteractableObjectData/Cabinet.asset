@@ -15,6 +15,16 @@ MonoBehaviour:
   interactableObjectType: 0
   miniGameType: 0
   objectName: Object Name
-  outputText: []
+  outputText:
+  - Text: The cupboards are bare.
+    TimeUntilClose: 1
+    TimeBetweenChars: 0.03
+    WriteTextTime: 0
+    MaxWidth: 200
+  - Text: "You\u2019ll ask Mother to go to the store when she gets home."
+    TimeUntilClose: 2
+    TimeBetweenChars: 0.03
+    WriteTextTime: 0
+    MaxWidth: 500
   clue: {fileID: 0}
   clueType: 0

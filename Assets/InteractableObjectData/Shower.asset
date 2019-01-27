@@ -16,10 +16,15 @@ MonoBehaviour:
   miniGameType: 0
   objectName: Shower
   outputText:
-  - Text: You don't need a shower right now.
+  - Text: "Women\u2019s showering supplies. "
     TimeUntilClose: 1
     TimeBetweenChars: 0.03
     WriteTextTime: 0
     MaxWidth: 300
+  - Text: Did the remember-lady leave these behind?
+    TimeUntilClose: 1
+    TimeBetweenChars: 0.03
+    WriteTextTime: 0
+    MaxWidth: 400
   clue: {fileID: 0}
   clueType: 0

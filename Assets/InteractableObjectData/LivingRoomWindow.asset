@@ -21,9 +21,10 @@ MonoBehaviour:
     TimeBetweenChars: 0.03
     WriteTextTime: 0
     MaxWidth: 300
-  - Text: I love listening to the birds.
+  - Text: You love listening to the birds.
     TimeUntilClose: 2
     TimeBetweenChars: 0.03
     WriteTextTime: 0
     MaxWidth: 300
   clue: {fileID: 0}
+  clueType: 0
