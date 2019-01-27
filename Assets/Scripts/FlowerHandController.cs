@@ -8,7 +8,9 @@ public class FlowerHandController : MonoBehaviour
     private GameObject grabbedFlower;
     [SerializeField] private Sprite grabHand;
     GameChangeInformation gameChangeInformation;
-    
+    [SerializeField] GameObject handRose;
+    [SerializeField] GameObject flowerPick;
+
     private const string GAMECHANGEINFORMATIONTAG = "GameChangeInformation";
 
     // Start is called before the first frame update
@@ -67,11 +69,12 @@ public class FlowerHandController : MonoBehaviour
     {
         if(collision.transform.tag == "PurpleRose")
         {
-            gameChangeInformation.ChangeToMainGame(true);
+            handRose.SetActive(true);
+            flowerPick.SetActive(false);
         }
         else
         {
-            gameChangeInformation.ChangeToMainGame(false);
+            gameChangeInformation.ChangeToMainGame(false, "Flower");
         }
     }
 
